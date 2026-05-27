@@ -37,8 +37,8 @@ One simple question on first open. AI generates a personalized initial cosmos. L
 
 *Research*: Hubenschmid et al. (2025) — avoid disruptive modality switching.
 
-### Decision 5: Connection Line Visibility → Under Discussion
-Direction: hover-highlight with persistent hint lines (progressive disclosure).
+### Decision 5: Connection Line Visibility → Hover-Highlight + Persistent Hints
+Connection lines use a two-tier system. Persistent faint hint lines maintain spatial skeleton awareness. Solid lines highlight on hover for current associations.
 
 *Research*: Chu & Chen (2025) — connector cues increase cognitive load in cluttered layouts.
 
@@ -97,6 +97,25 @@ Global Paths (identical across desktop/mobile):
 ## Research Foundation
 
 See [research-references.md](research-references.md) for complete bibliography with findings and Linna applications.
+
+---
+
+## Core Modules
+
+Depth design completed (May 27, 2026). Six core modules defined:
+
+- **Import Panel** — Unified knowledge entry. File drag-and-drop, batch folder import, URL paste. AI auto-classifies content to relevant planets.
+- **Timeline** — Global vertical timeline. Three granularities (day/month/year). Relative date display with absolute fallback.
+- **AI Chat Panel** — Right-side slide-out. Context locked to current planet on open. Streaming output with source citations from the Book of the Universe.
+- **Search** — Ctrl+K global invoke. Background blur, results grouped by planet. Keyboard navigation. AI assist when no results found.
+- **Card List** — Alternative to 3D cosmos. Compact planet rows. Sortable, pinnable. Morphing transition animation between cosmos and card views.
+- **Editor (L3)** — Read/Edit dual mode. Immersive reading with hidden toolbar; toolbar slides up for editing.
+
+Detailed design documents and decision records are internal assets, not included in this public repository.
+
+## Current Status
+
+**May 27, 2026**: Phase 2.5 depth design complete. All core modules and AI engine architecture finalized. Entering development phase.
 
 ---
 

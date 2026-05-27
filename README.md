@@ -37,10 +37,12 @@ The AI assistant doesn't search the internet for answers. It searches **your** B
 
 ## Core Design Principles
 
-- **Respect human habits** — No novel interaction paradigms. Operations follow established user expectations.
-- **Efficient, simple, durable** — Designed to scale across decades of accumulated knowledge.
-- **Cross-platform consistent** — Desktop and mobile share identical operation flows.
-- **Research-grounded** — Every design decision backed by published HCI and cognitive science research.
+1. **Respect human habits** — No novel interaction paradigms. Operations follow established user expectations.
+2. **Efficient, simple, durable** — Designed to scale across decades of accumulated knowledge.
+3. **Cross-platform consistent** — Desktop and mobile share identical operation flows.
+4. **Progressive** — Build indispensable core features first. Expand gradually.
+5. **Zero-barrier access** — Every core operation works for users of any age and background.
+6. **AI differentiation first** — Every AI feature must be grounded in the user's Book of the Universe with source attribution.
 
 ---
 
@@ -117,6 +119,23 @@ The specific combination of (a) 3D spatial universe metaphor for personal knowle
 - **Creator**: Filinna
 - **Domain**: [filinna.top](https://filinna.top)
 - **OSF Registration**: [osf.io/aygk6](https://osf.io/aygk6) — May 27, 2026 (DOI pending)
+
+---
+
+## Core Modules
+
+Depth design (Phase 2.5) completed with 6 core functional modules:
+
+- **Import Panel** — Unified entry for external knowledge. Drag-and-drop, batch folder import, AI-powered classification.
+- **Timeline** — Global vertical timeline. Browse knowledge across all planets by day/month/year.
+- **AI Chat Panel** — Right-side slide-out panel. AI guardian searches your Book of the Universe, not the internet.
+- **Search** — Ctrl+K global search. Results grouped by planet, keyboard-navigable. AI steps in when no results are found.
+- **Card List** — Alternative planet view. Compact rows with sort, pin, and a morphing transition from 3D cosmos to cards.
+- **Editor (L3)** — Read/Edit dual mode. Immersive reading by default, toolbar slides up when editing.
+
+## Current Status
+
+**May 27, 2026**: Phase 2.5 depth design complete. 6 core modules + AI engine architecture finalized. Ready for development.
 
 ---
 
