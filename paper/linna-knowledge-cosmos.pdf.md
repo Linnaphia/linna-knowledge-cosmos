@@ -274,8 +274,6 @@ This paper serves as a public declaration of prior art. The complete design fram
 
 As of the date of this public disclosure, the Phase 2.5 depth design for Linna has been completed. Six core functional modules have been fully specified: Import Panel, Timeline, AI Chat Panel, Search Panel, Card List View, and Content Editor (L3). The AI engine architecture has been designed with function-calling capability, multi-layered retrieval strategy, and streaming response generation. All design decisions are grounded in the research foundation described in Sections 2–4.
 
-Detailed design documents and implementation specifications are maintained in the private development repository.
-
 ---
 
 ## Prior Art Declaration
