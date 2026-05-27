@@ -1,7 +1,7 @@
 # Linna Design Framework & Vision
 
-> Complete design framework for the Linna Knowledge Cosmos system.
-> All decisions grounded in published HCI and cognitive science research.
+> Last updated: 2026-05-27 (Depth Design Complete)
+> 6 core modules + AI engine architecture finalized. Ready for development.
 
 ---
 

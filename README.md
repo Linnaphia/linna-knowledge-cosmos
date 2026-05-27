@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![OSF](https://img.shields.io/badge/OSF-Registration-green.svg)](https://osf.io/aygk6)
-[![Phase](https://img.shields.io/badge/phase-design%20framework-orange.svg)]()
+[![Phase](https://img.shields.io/badge/phase-depth%20design%20complete-blue.svg)]()
 
 ---
 
