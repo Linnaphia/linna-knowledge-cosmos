@@ -15,7 +15,7 @@ Current AI assistants suffer from a fundamental limitation: they do not remember
 
 The year is 2026. Large language models have become ubiquitous. Yet every AI conversation remains fundamentally anonymous—the AI does not know who you are, what you know, or what you have previously discussed. This is not a technical limitation; it is a design choice. Mainstream AI assistants are optimized for general-purpose question answering, not for building a persistent model of an individual user's knowledge, preferences, and intellectual history.
 
-Meanwhile, personal knowledge management (PKM) has become a thriving category. Tools like Obsidian, Notion, and Roam Research help users capture and organize information. However, research shows that approximately 50% of saved content is never reopened (UC Berkeley iSchool, 2025). The problem is not capture—it is retrieval, relevance, and emotional connection.
+Meanwhile, personal knowledge management (PKM) has become a thriving category. A variety of tools help users capture and organize information. However, research shows that approximately 50% of saved content is never reopened (UC Berkeley iSchool, 2025). The problem is not capture—it is retrieval, relevance, and emotional connection.
 
 **Linna** proposes a unified solution: a personal knowledge system where every piece of saved information becomes part of a 3D spatial universe, and where an AI assistant answers questions by drawing from this personal knowledge base rather than from generic training data. The result is an AI that genuinely knows its user.
 
@@ -27,7 +27,7 @@ Linna combines three innovations that, to our knowledge, have not been combined 
 
 2. **The Book of the Universe**: A personal knowledge base that serves as the sole source of truth for the AI assistant. Unlike generic AI assistants that draw from internet-scale training data, Linna's AI retrieves information from the user's own structured knowledge repository, with source attribution.
 
-3. **Platform Carrier Vision**: Linna is architected not as a single-purpose tool but as a platform that can integrate multiple AI models (via API), support plugins, and eventually expand into services including payments, scheduling, and social features—following the WeChat model of gradual platform evolution.
+3. **Platform Carrier Vision**: Linna is architected not as a single-purpose tool but as an extensible platform that can integrate multiple AI models, support plugins, and eventually expand into a comprehensive ecosystem including services, scheduling, and knowledge sharing—an approach of gradual platform evolution.
 
 ### 1.2 Paper Structure
 
@@ -61,9 +61,9 @@ This finding has profound implications for PKM tool design: features that create
 
 ### 2.4 AI Personal Memory Systems
 
-The AI memory space has attracted significant venture capital in 2024-2025. Mem0 raised $24M for an API-based memory layer for AI applications (TechCrunch, Oct 2025). Tana raised $25M for an AI-powered knowledge graph with 160,000 waitlist sign-ups. Supermemory raised $2.6M from investors including Google AI chief Jeff Dean for a universal memory API. TwinMind, founded by former Google X employees, raised over $8M for a continuous-listening personal knowledge base app.
+The AI memory space has attracted significant venture capital in 2024-2025. Multiple startups have raised substantial funding for AI memory infrastructure, with the sector attracting over $65M in disclosed funding across seed and Series A rounds in 2025 alone. These investments signal strong market validation for the thesis that AI needs persistent, personalized memory—moving beyond single-session context to truly knowing a user over time.
 
-However, all existing systems operate as either infrastructure APIs (Mem0, Supermemory) or 2D document/knowledge-graph interfaces (Tana, TwinMind). **None** combines 3D spatial organization with personal knowledge-driven AI in a consumer-facing application with a platform carrier vision.
+However, existing systems operate as either infrastructure APIs or 2D document/knowledge-graph interfaces. **None** combines 3D spatial organization with personal knowledge-driven AI in a consumer-facing application with a platform carrier vision.
 
 ### 2.5 Visual Metaphor Design for Knowledge
 
@@ -230,7 +230,7 @@ Linna's development follows a four-phase roadmap spanning from immediate executi
 
 ### Phase 4: Universal Carrier (3–10 years)
 
-**Goal**: An indispensable daily AI companion at the scale of WeChat or Alipay.
+**Goal**: An indispensable daily AI companion and comprehensive ecosystem platform.
 
 - Life services integration (payment, scheduling, commerce)
 - Social knowledge networking
@@ -242,7 +242,7 @@ Linna's development follows a four-phase roadmap spanning from immediate executi
 
 ## 6. Conclusion
 
-Linna proposes a new paradigm for personal knowledge management: one where knowledge is not stored in folders but organized as a living cosmos, and where the AI assistant does not merely chat—it genuinely knows its user through the accumulation of personal knowledge over time.
+Linna proposes an alternative paradigm for personal knowledge management: one where knowledge is not stored in folders but organized as a living cosmos, and where the AI assistant does not merely chat—it genuinely knows its user through the accumulation of personal knowledge over time.
 
 The core insight is simple but has been overlooked by the current generation of AI products: **a personal AI must have personal knowledge**. The Book of the Universe provides this foundation, and the 3D spatial metaphor transforms knowledge management from a chore into an experience of ownership, discovery, and emotional connection.
 

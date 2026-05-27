@@ -33,7 +33,7 @@ One simple question on first open. AI generates a personalized initial cosmos. L
 *Research*: UC Berkeley iSchool (2025); Forsey & Leahy — layered interfaces improve learnability.
 
 ### Decision 4: Alternative Views → 3D + Card/List Coexistence
-3D cosmos and card/list views coexist side by side, like Obsidian's graph + file list.
+3D cosmos and card/list views coexist side by side. The spatial view serves browsing and discovery, the list view serves efficient retrieval and editing.
 
 *Research*: Hubenschmid et al. (2025) — avoid disruptive modality switching.
 
@@ -90,7 +90,7 @@ Global Paths (identical across desktop/mobile):
 | 1. Foundation | Now – 3 months | Reliable knowledge storage. Users *want* to return. |
 | 2. Book of the Universe | 3–12 months | RAG-powered AI answers from personal knowledge with citations |
 | 3. Platform | 1–3 years | Plugins, mobile, knowledge marketplace |
-| 4. Carrier | 3–10 years | WeChat-scale platform: payments, social, services |
+| 4. Carrier | 3–10 years | Full ecosystem: life services, knowledge sharing, AI agents |
 
 ---
 

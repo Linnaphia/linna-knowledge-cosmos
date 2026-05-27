@@ -3,7 +3,7 @@
 > **The Book of the Universe** — A personal knowledge cosmos where AI truly knows you.
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![OSF Preprint](https://img.shields.io/badge/OSF-Preprint-green.svg)](https://osf.io/)
+[![OSF](https://img.shields.io/badge/OSF-Registration-green.svg)](https://osf.io/aygk6)
 [![Phase](https://img.shields.io/badge/phase-design%20framework-orange.svg)]()
 
 ---
@@ -12,7 +12,7 @@
 
 Every AI assistant you use today suffers from the same flaw: **it doesn't remember you**.
 
-ChatGPT, DeepSeek, Claude — they're brilliant. But every conversation starts from zero. They don't know what you've learned, what you care about, or what you've previously discussed. The AI that is supposed to be *your* assistant has no memory of *you*.
+Today's AI assistants are brilliant. But every conversation starts from zero. They don't know what you've learned, what you care about, or what you've previously discussed. The AI that is supposed to be *your* assistant has no memory of *you*.
 
 Meanwhile, ~50% of everything you save is never reopened (UC Berkeley iSchool, 2025). Your knowledge is scattered across notes, bookmarks, chat histories, and files — stored but not living.
 
@@ -87,7 +87,7 @@ Global Paths (always available, every page):
 | **1. Foundation** | Now – 3 months | Store, organize, find. Users *want* to come back. |
 | **2. Book of the Universe** | 3–12 months | AI answers from personal knowledge with source citations |
 | **3. Platform** | 1–3 years | Plugins, mobile apps, knowledge marketplace |
-| **4. Carrier** | 3–10 years | The WeChat of AI — payments, social, services |
+| **4. Carrier** | 3–10 years | Full ecosystem — life services, knowledge sharing, AI agents |
 
 ---
 
@@ -99,7 +99,7 @@ This repository and the accompanying [OSF Preprint](https://osf.io/) serve as **
 - **Author**: Filinna
 - **License**: Apache 2.0
 
-The specific combination of (a) 3D spatial universe metaphor for personal knowledge, (b) personal knowledge-base-driven AI with source attribution, and (c) multi-model carrier platform architecture is, to our knowledge, novel.
+The specific combination of (a) 3D spatial universe metaphor for personal knowledge, (b) personal knowledge-base-driven AI with source attribution, and (c) multi-model carrier platform architecture represents an approach we believe has not been fully explored in a consumer-facing application.
 
 ---
 
@@ -116,7 +116,7 @@ The specific combination of (a) 3D spatial universe metaphor for personal knowle
 
 - **Creator**: Filinna
 - **Domain**: [filinna.top](https://filinna.top)
-- **Repository**: [github.com/filinna/linna-knowledge-cosmos](https://github.com/filinna/linna-knowledge-cosmos)
+- **OSF Registration**: [osf.io/aygk6](https://osf.io/aygk6) — May 27, 2026 (DOI pending)
 
 ---
 
