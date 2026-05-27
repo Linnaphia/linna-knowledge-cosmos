@@ -270,10 +270,18 @@ This paper serves as a public declaration of prior art. The complete design fram
 
 ---
 
+## 8. Design Status (Addendum, May 27, 2026)
+
+As of the date of this public disclosure, the Phase 2.5 depth design for Linna has been completed. Six core functional modules have been fully specified: Import Panel, Timeline, AI Chat Panel, Search Panel, Card List View, and Content Editor (L3). The AI engine architecture has been designed with function-calling capability, multi-layered retrieval strategy, and streaming response generation. All design decisions are grounded in the research foundation described in Sections 2–4.
+
+Detailed design documents and implementation specifications are maintained in the private development repository.
+
+---
+
 ## Prior Art Declaration
 
 **Date of first public disclosure**: May 27, 2026  
-**Repository**: [github.com/filinna/linna-knowledge-cosmos](https://github.com/filinna/linna-knowledge-cosmos)  
+**Repository**: [github.com/Linnaphia/linna-knowledge-cosmos](https://github.com/Linnaphia/linna-knowledge-cosmos)  
 **Preprint DOI**: [to be assigned by OSF Preprints]  
 **Author**: Filinna  
 **License**: Apache 2.0

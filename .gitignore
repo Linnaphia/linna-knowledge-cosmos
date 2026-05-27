@@ -1,11 +1,43 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+.next/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials*
+secrets*
+
+# IDE & editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Editor
-.vscode/
-.idea/
-
-# Temp files
-*.tmp
+# Debug & logs
 *.log
+npm-debug.log*
+
+# Internal tools
+.claude/
+.claude/
+
+# Backup & temp
+*.tmp
+*.bak
+*.backup
+backup/
+temp/
