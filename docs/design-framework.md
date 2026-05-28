@@ -1,7 +1,7 @@
 # Linna Design Framework & Vision
 
-> Last updated: 2026-05-27 (Depth Design Complete)
-> 6 core modules + AI engine architecture finalized. Ready for development.
+> Last updated: June 2026
+> Phase 1 delivered — 14 modules operational. v2 paper submitted to MetaArXiv (DOI pending).
 
 ---
 
@@ -87,7 +87,7 @@ Global Paths (identical across desktop/mobile):
 
 | Phase | Timeline | Goal |
 |-------|----------|------|
-| 1. Foundation | Now – 3 months | Reliable knowledge storage. Users *want* to return. |
+| 1. Foundation | May–June 2026 ✅ | Reliable knowledge storage. Users *want* to return. |
 | 2. Book of the Universe | 3–12 months | RAG-powered AI answers from personal knowledge with citations |
 | 3. Platform | 1–3 years | Plugins, mobile, knowledge marketplace |
 | 4. Carrier | 3–10 years | Full ecosystem: life services, knowledge sharing, AI agents |
@@ -102,7 +102,7 @@ See [research-references.md](research-references.md) for complete bibliography w
 
 ## Core Modules
 
-Depth design completed (May 27, 2026). Six core modules defined:
+Phase 1 delivered (June 2026). 14 modules operational. Core modules:
 
 - **Import Panel** — Unified knowledge entry. File drag-and-drop, batch folder import, URL paste. AI auto-classifies content to relevant planets.
 - **Timeline** — Global vertical timeline. Three granularities (day/month/year). Relative date display with absolute fallback.
@@ -115,7 +115,7 @@ Detailed design documents and decision records are internal assets, not included
 
 ## Current Status
 
-**May 27, 2026**: Phase 2.5 depth design complete. All core modules and AI engine architecture finalized. Entering development phase.
+**June 2026**: Phase 1 delivered — complete desktop application. 14 modules operational. v2 paper submitted to MetaArXiv (DOI pending). Phase 2 planning underway.
 
 ---
 

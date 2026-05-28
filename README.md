@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![OSF](https://img.shields.io/badge/OSF-Registration-green.svg)](https://osf.io/aygk6)
-[![Phase](https://img.shields.io/badge/phase-depth%20design%20complete-blue.svg)]()
+[![Phase](https://img.shields.io/badge/phase-Phase%201%20Delivered-brightgreen.svg)]()
 
 ---
 
@@ -18,7 +18,7 @@ Meanwhile, ~50% of everything you save is never reopened (UC Berkeley iSchool, 2
 
 ## The Solution
 
-**Linna** combines three things that have never been combined before:
+**Linna** combines six innovations that have never been combined before:
 
 ### 1. A 3D Spatial Universe
 Your knowledge isn't a folder tree. It's a cosmos. Each topic is a **planet**. Related topics form **galaxies**. Knowledge connections are glowing **constellation lines**. You are the creator and ruler of your personal universe.
@@ -32,6 +32,15 @@ A personal knowledge base that grows with you. Every idea, note, and insight you
 The AI assistant doesn't search the internet for answers. It searches **your** Book of the Universe. Every answer comes with a source: "Based on your March 2026 note on React performance..."
 
 > This is not a chatbot. This is *your* AI, built on *your* knowledge.
+
+### 4. Guardian Personality Engine
+The AI is not a generic assistant. It has a three-layer personality architecture — daily warmth, work precision, and protective boundary — with scene-aware modulation that adjusts interaction style based on time of day and conversation context. The personality specification is model-agnostic: defined as infrastructure, versioned and improved independently of the underlying LLM.
+
+### 5. Hybrid Knowledge Retrieval
+Three knowledge sources fused before every response: personal knowledge base (semantic search + FTS5 full-text fallback), real-time web search (multi-engine), and universe-wide contextual awareness. The Guardian doesn't decide to search — the system ensures it already knows what it needs before it speaks.
+
+### 6. Identity-Driven AI Onboarding
+No empty canvas. New users describe who they are (6 identity profiles) and what they care about (8 interest categories). The system generates a populated initial cosmos with real content. Start with knowledge, not with structure.
 
 ---
 
@@ -73,7 +82,7 @@ Global Paths (always available, every page):
 | Layer | Technology |
 |-------|-----------|
 | Frontend | React 19 · TypeScript 5 · Vite 6 |
-| 3D | Three.js · @react-three/fiber · GSAP (planned) |
+| 3D | Three.js · @react-three/fiber · GSAP |
 | UI Animation | Framer Motion 11 |
 | State | Zustand 4 |
 | Backend | FastAPI (Python) |
@@ -86,7 +95,7 @@ Global Paths (always available, every page):
 
 | Phase | Timeline | Goal |
 |-------|----------|------|
-| **1. Foundation** | Now – 3 months | Store, organize, find. Users *want* to come back. |
+| **1. Foundation** | May–June 2026 ✅ | Store, organize, find. Users *want* to come back. |
 | **2. Book of the Universe** | 3–12 months | AI answers from personal knowledge with source citations |
 | **3. Platform** | 1–3 years | Plugins, mobile apps, knowledge marketplace |
 | **4. Carrier** | 3–10 years | Full ecosystem — life services, knowledge sharing, AI agents |
@@ -95,13 +104,13 @@ Global Paths (always available, every page):
 
 ## Prior Art & Intellectual Property
 
-This repository and the accompanying [OSF Preprint](https://osf.io/) serve as **public prior art declaration** for the Linna Knowledge Cosmos system.
+This repository, the [OSF Project](https://osf.io/aygk6), and the MetaArXiv preprint (DOI pending) serve as **public prior art declaration** for the Linna Knowledge Cosmos system.
 
 - **Date of first public disclosure**: May 27, 2026
 - **Author**: Filinna
 - **License**: Apache 2.0
 
-The specific combination of (a) 3D spatial universe metaphor for personal knowledge, (b) personal knowledge-base-driven AI with source attribution, and (c) multi-model carrier platform architecture represents an approach we believe has not been fully explored in a consumer-facing application.
+The specific combination of (a) 3D spatial universe metaphor with data-to-visual mapping and 4-state camera system, (b) structured personal knowledge base with lifecycle state machine and semantic connection types, (c) character-driven AI companion with three-layer personality architecture, (d) hybrid three-source knowledge retrieval with pre-generation fusion, (e) identity-driven AI onboarding, and (f) carrier platform architecture with four-phase evolution roadmap represents an approach we believe has not been fully explored in a consumer-facing application.
 
 ---
 
@@ -124,7 +133,7 @@ The specific combination of (a) 3D spatial universe metaphor for personal knowle
 
 ## Core Modules
 
-Depth design (Phase 2.5) completed with 6 core functional modules:
+Phase 1 delivered with 14 functional modules. Core modules:
 
 - **Import Panel** — Unified entry for external knowledge. Drag-and-drop, batch folder import, AI-powered classification.
 - **Timeline** — Global vertical timeline. Browse knowledge across all planets by day/month/year.
@@ -135,7 +144,7 @@ Depth design (Phase 2.5) completed with 6 core functional modules:
 
 ## Current Status
 
-**May 27, 2026**: Phase 2.5 depth design complete. 6 core modules + AI engine architecture finalized. Ready for development.
+**June 2026**: Phase 1 delivered — complete desktop application. All 14 functional modules operational including Guardian Personality Engine, hybrid knowledge retrieval, 3D cosmos visualization, identity-driven onboarding, dual-theme design system, and dual-layer animation framework. v2 academic paper submitted to MetaArXiv (DOI pending). Phase 2 planning underway.
 
 ---
 
