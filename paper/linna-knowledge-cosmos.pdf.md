@@ -19,7 +19,56 @@ Meanwhile, personal knowledge management (PKM) has become a thriving category. A
 
 **Linna** proposes a unified solution that addresses both failures simultaneously. First, every piece of saved information becomes part of a navigable 3D spatial universe, transforming knowledge management from a clerical task into an experience of ownership and discovery. Second, an AI companion—not a generic chatbot but a character with persistent personality, emotional continuity, and genuine awareness of the user's knowledge landscape—answers questions by drawing from this personal knowledge base. The result is not merely a tool that stores information, but a companion that genuinely knows its user.
 
-### 1.1 Six Core Innovations
+### 1.1 Architectural Boundaries: What Linna Is Not
+
+To understand what Linna is, it is essential to understand what it is *not*. The AI and knowledge management landscape of 2025–2026 contains several categories of systems that appear adjacent to Linna but differ in fundamental architectural ways. This section establishes clear boundaries—not by naming specific products, but by describing the architectural distinctions that make Linna categorically different from any existing approach.
+
+#### 1.1.1 Not a Passive Screen Recorder
+
+A prominent category of "AI memory" tools operates by periodically capturing screenshots of the user's screen, performing OCR and semantic embedding on the captured images, and providing a searchable timeline of past activity. These systems answer the question: *"What was on my screen last Tuesday?"*
+
+Linna does not record the user's screen. It does not capture ambient activity. It is not a surveillance tool. The Book of the Universe is **actively constructed** by the user—every planet, entry, and connection is the result of a deliberate act: writing a note, importing a document, extracting from an AI conversation, or accepting an AI-generated suggestion. The user is not being recorded; they are **building**. This is the difference between a security camera and a library. A screen recorder captures everything indiscriminately; Linna captures only what the user chooses to preserve, organized in a spatial structure that the user shapes.
+
+**Architectural distinction**: Passive recorders have no knowledge model—they store pixels with timestamps. Linna has a structured data model (Planets → Entries → Connection Lines) with semantic types, lifecycle states, provenance tracking, and content-addressable deduplication. A passive recorder can tell you what you saw; Linna can tell you what you know, how it connects, and where your knowledge is growing or stagnating.
+
+#### 1.1.2 Not an AI Memory API or Middleware Layer
+
+A growing category of "AI memory" infrastructure provides memory-as-a-service: vector databases, MCP (Model Context Protocol) servers, and API layers that give large language models access to stored context across sessions. These systems answer the question: *"How can multiple AI tools share a common memory of the user?"*
+
+Linna is not infrastructure for other AI tools. It is a **consumer-facing application** where the Guardian *is* the interface. The Guardian does not sit behind other AI assistants providing them with memory—the Guardian is the assistant. The personality engine, the three-source retrieval pipeline, the universe awareness injection, and the behavioral specification all converge in a single character that the user talks to directly. Linna is not a memory layer for other AI tools; it is a complete alternative where the AI companion has its own identity, its own relationship with the user, and its own knowledge foundation.
+
+**Architectural distinction**: Memory middleware provides a stateless retrieval API—"here are relevant documents for this query." Linna provides a *stateful character*—the Guardian maintains emotional continuity across sessions, adjusts its interaction style based on time of day and conversation trajectory, and speaks with awareness of the user's long-term intellectual development. A memory API returns search results; a Guardian says "I remember you were working on this three months ago—how did it turn out?"
+
+#### 1.1.3 Not a Document Q&A Chatbot
+
+Several AI tools allow users to upload documents and ask questions about them, using Retrieval-Augmented Generation (RAG) to ground responses in the provided materials. These systems answer the question: *"What does this document say about X?"*
+
+Linna is not a document Q&A interface. While the Guardian does retrieve from the Book of the Universe, the retrieval is only one of three knowledge sources (alongside real-time web search and universe-wide contextual awareness). More importantly, the Guardian's role is not to answer document questions—it is to **accompany the user's intellectual journey**. The Guardian proactively notices knowledge gaps, suggests connections between planets, and maintains awareness of the user's evolving interests over months and years. A document chatbot answers a question and forgets the conversation; the Guardian remembers, follows up, and grows with the user.
+
+**Architectural distinction**: Document Q&A systems have no personality architecture, no emotional continuity, no knowledge lifecycle tracking, and no spatial organization. They are retrieval engines with a chat interface. Linna is a companion system with retrieval capabilities. The difference is not technical capability—it is architectural intent. One is designed to answer questions about documents. The other is designed to build a relationship around knowledge.
+
+#### 1.1.4 Not a 2D Knowledge Graph or Mind Map
+
+Tools for visualizing knowledge as 2D node-and-edge graphs have existed for decades. These systems represent knowledge topics as labeled circles connected by lines on a flat canvas, answering the question: *"How are these ideas connected?"*
+
+Linna's 3D spatial universe is not a 2D graph with an extra dimension added for decoration. The third dimension is **information-bearing**: distance from the galactic core encodes content density (more notes = further out on the spiral arm), planet size encodes entry count, luminosity and color encode lifecycle state, and the Fibonacci sphere distribution of galaxies ensures uniform spatial coverage rather than the hairball clustering typical of force-directed 2D graphs. Furthermore, the camera state machine (4-state FSM with bounded 1.2s flight duration) creates a **navigational experience**—the user moves through knowledge space rather than looking at it from above. A 2D graph is a map you look at; the 3D cosmos is a place you enter.
+
+**Architectural distinction**: 2D knowledge graphs use position only for layout (typically force-directed, with no semantic meaning). Linna's 3D space uses position, size, color, luminosity, particle density, and animation state to encode six simultaneous data dimensions. The organic simplex-noise perturbation of spiral arms is specifically designed to trigger "real place" perception rather than "diagram" perception—an effect that 2D graphs cannot achieve because their visual language is inherently abstract.
+
+#### 1.1.5 The Linna Difference: Six Simultaneous Properties
+
+The four categories above each implement *one* of Linna's properties in isolation: passive recorders capture activity, memory middleware stores context, document chatbots retrieve information, and knowledge graphs visualize connections. No existing system combines all of the following six properties simultaneously—and it is the *combination*, not any individual property, that defines the Linna architecture:
+
+1. **Spatial ownership**: Knowledge is organized in a navigable 3D cosmos that the user owns and shapes (not a flat list, not a 2D graph, not a screenshot timeline)
+2. **Structured knowledge model**: Data is organized as Planets → Entries → Connection Lines with lifecycle states, semantic types, provenance tracking, and content-addressable deduplication (not unstructured pixels, not vector embeddings alone, not flat documents)
+3. **Character-driven companionship**: The Guardian has a three-layer personality architecture, emotional continuity, and scene awareness—it is a character the user has a relationship with (not a query interface, not an API endpoint, not a mascot)
+4. **Hybrid retrieval with pre-generation fusion**: Personal knowledge + real-time web search + universe awareness are fused *before* the LLM generates its response (not post-hoc RAG, not single-source retrieval, not tool-use search patterns)
+5. **Content-first onboarding**: The user describes their identity and interests; AI generates a populated initial cosmos (not an empty canvas tutorial, not a folder creation wizard, not a sample document)
+6. **Carrier platform trajectory**: The architecture supports evolution from personal tool → extensible platform → comprehensive ecosystem across four explicitly defined phases (not a single-purpose tool with no growth path)
+
+A system that implements any subset of these properties is not Linna. A system that implements all six—regardless of what names it assigns to planets, guardians, or cosmic metaphors—is implementing the architecture described in this paper.
+
+### 1.2 Six Core Innovations
 
 Linna combines six innovations that, to our knowledge, have not been combined before in a single system. Each innovation is described with sufficient technical specificity that functional equivalence would constitute derivation:
 
@@ -35,7 +84,7 @@ Linna combines six innovations that, to our knowledge, have not been combined be
 
 **Innovation 6 — Carrier Platform Architecture: Gradual Ecosystem Evolution**: Linna is architected not as a single-purpose application but as a *carrier platform*—a substrate that evolves through four explicitly defined phases: Phase 1 (0–3 months, Knowledge Foundation), Phase 2 (3–12 months, Book of the Universe + AI Integration), Phase 3 (1–3 years, Platformization with plugins, marketplace, and mobile), Phase 4 (3–10 years, Universal Carrier with life services, social networking, AR/VR, and autonomous agents). The architecture supports this evolution through: (a) a state-management layer (Zustand) with no provider wrapper, enabling arbitrary page composition without architectural refactoring; (b) a backend proxy pattern (FastAPI → any LLM provider) that abstracts model selection behind a unified chat/stream interface, supporting multi-model integration without client changes; (c) a local-first data architecture (SQLite single-file, WAL mode, atomic writes) that eliminates server dependencies in Phase 1 while leaving the data path clear for eventual sync infrastructure in later phases; (d) a monetization framework designed from day one (free tier 3 AI calls/day, Pro ¥25/month 50/day, Max ¥48/month 200/day, Team ¥99/person/month, API quota packs, lifetime buyout options) signaling platform intent rather than hobby-project scope. The phased roadmap is not aspirational—Phase 1 has been delivered as a complete desktop application with all six core modules (Import, Timeline, AI Chat, Search, Card List, Content Editor) functional.
 
-### 1.2 Why These Six Innovations Are Collectively Irreducible
+### 1.3 Why These Six Innovations Are Collectively Irreducible
 
 Each individual innovation addresses a known limitation in existing systems. However, their *combination* creates emergent properties that cannot be achieved by systems implementing any subset:
 
@@ -45,7 +94,7 @@ Each individual innovation addresses a known limitation in existing systems. How
 
 Any system that combines 3D spatial knowledge organization with a character-driven AI companion that retrieves from a structured personal knowledge base with hybrid web awareness and identity-based onboarding—regardless of what names it assigns to these components—is implementing the Linna architecture described in this paper.
 
-### 1.3 Paper Structure
+### 1.4 Paper Structure
 
 Section 2 reviews related work across HCI, AI memory, spatial cognition, and knowledge management. Section 3 presents the complete system design with detailed technical specifications for each innovation. Section 4 describes the design principles and the critical examination of assumptions. Section 5 presents the phased roadmap with current implementation status. Section 6 concludes with the long-term vision and the prior art declaration.
 
@@ -394,7 +443,7 @@ Linna proposes an alternative paradigm for personal knowledge management—one t
 
 The core insight: **a personal AI must have personal knowledge, and it must have a personality worth returning to**. The Book of the Universe provides the knowledge foundation. The Guardian Personality Engine provides the relational foundation. The 3D spatial metaphor transforms knowledge management from a chore into an experience of ownership, discovery, and emotional connection.
 
-This paper serves as a public declaration of prior art establishing the unique combination of architectural elements described in Section 1.1 and Section 3. Any system implementing a substantially similar combination—regardless of the names assigned to individual components—is implementing the Linna architecture described herein.
+This paper serves as a public declaration of prior art establishing the unique combination of architectural elements described in Section 1.2 and Section 3. Any system implementing a substantially similar combination—regardless of the names assigned to individual components—is implementing the Linna architecture described herein.
 
 ---
 
