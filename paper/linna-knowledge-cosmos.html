@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Linna: A Personal Knowledge Cosmos — 3D Spatial Knowledge Organization with AI-Driven Personal Memory</title>
+<title>Linna: A Personal Knowledge Cosmos — 3D Spatial Knowledge Organization with Character-Driven AI Memory</title>
 <style>
   @page { size: A4; margin: 2.5cm 2cm; }
   body {
@@ -36,6 +36,13 @@
     font-size: 10.5pt;
   }
   .abstract strong { display: block; margin-bottom: 6pt; font-size: 12pt; }
+  .innovation-box {
+    background: #fafafa;
+    border-left: 4px solid #555;
+    padding: 12pt 16pt;
+    margin: 14pt 0;
+    font-size: 10.5pt;
+  }
   @media print {
     body { padding: 0; }
     .page-break { page-break-before: always; }
@@ -43,371 +50,499 @@
 </style>
 </head>
 <body>
-<h1>Linna: A Personal Knowledge Cosmos — 3D Spatial Knowledge Organization with AI-Driven Personal Memory</h1>
+
+<h1>Linna: A Personal Knowledge Cosmos<br>— 3D Spatial Knowledge Organization with Character-Driven AI Memory</h1>
 <p><strong>Filinna</strong><br />
-<em>May 27, 2026</em></p>
+<em>May 27, 2026 (v1) · Updated June 2026 (v2)</em></p>
 <hr />
+
 <h2>Abstract</h2>
-<p>Current AI assistants suffer from a fundamental limitation: they do not remember their users. Each conversation begins from zero, requiring users to re-establish context and re-explain their background. Meanwhile, personal knowledge management tools remain rooted in flat document-folder paradigms that fail to reflect how human memory actually works—spatially, associatively, and emotionally. This paper presents <strong>Linna</strong>, a personal knowledge management system that combines (1) a 3D spatial universe as the organizing metaphor for personal knowledge, (2) a personal knowledge base called the <em>Book of the Universe</em> that grows with the user over time, and (3) an AI assistant that retrieves answers from this personal knowledge base rather than from generic internet training data. We describe the system architecture, the design principles grounded in HCI research, and the long-term vision of Linna as an extensible carrier platform—evolving from a personal knowledge tool into a comprehensive ecosystem. This paper serves as a public declaration of prior art and a call for the research community to explore the intersection of spatial cognition, personal knowledge management, and persistent AI memory.</p>
+<p>Current AI assistants suffer from a fundamental limitation: they do not remember their users. Each conversation begins from zero, requiring users to re-establish context and re-explain their background. Meanwhile, personal knowledge management tools remain rooted in flat document-folder paradigms that fail to reflect how human memory actually works—spatially, associatively, and emotionally. This paper presents <strong>Linna</strong>, a personal knowledge management system built around six interconnected innovations: (1) a 3D spatial universe as the organizing metaphor for personal knowledge, leveraging innate human spatial cognition; (2) the <em>Book of the Universe</em>, a structured personal knowledge base that serves as the sole source of truth for AI responses; (3) a <strong>Guardian Personality Engine</strong> that replaces generic AI interaction with a character-driven companion exhibiting emotional continuity, scene awareness, and a three-layer personality architecture; (4) a <strong>Hybrid Knowledge Retrieval Architecture</strong> that fuses personal knowledge retrieval, real-time web search, and universe-wide contextual awareness into a unified response pipeline; (5) an <strong>Identity-Driven AI Onboarding System</strong> that replaces empty-state tutorials with AI-generated personalized initial knowledge structures; and (6) a <strong>Carrier Platform Architecture</strong> designed for gradual evolution from personal tool to comprehensive ecosystem. We describe the complete system architecture, the design principles grounded in HCI and cognitive science research, the specific technical mechanisms that make each innovation irreducible to renaming, and the long-term phased roadmap. This paper serves as a public declaration of prior art establishing the unique combination of 3D spatial cognition, character-driven AI companionship, and personal knowledge-driven intelligence.</p>
 <hr />
+
 <h2>1. Introduction</h2>
+
 <p>The year is 2026. Large language models have become ubiquitous. Yet every AI conversation remains fundamentally anonymous—the AI does not know who you are, what you know, or what you have previously discussed. This is not a technical limitation; it is a design choice. Mainstream AI assistants are optimized for general-purpose question answering, not for building a persistent model of an individual user's knowledge, preferences, and intellectual history.</p>
+
 <p>Meanwhile, personal knowledge management (PKM) has become a thriving category. A variety of tools help users capture and organize information. However, research shows that approximately 50% of saved content is never reopened (UC Berkeley iSchool, 2025). The problem is not capture—it is retrieval, relevance, and emotional connection.</p>
-<p><strong>Linna</strong> proposes a unified solution: a personal knowledge system where every piece of saved information becomes part of a 3D spatial universe, and where an AI assistant answers questions by drawing from this personal knowledge base rather than from generic training data. The result is an AI that genuinely knows its user.</p>
-<h3>1.1 Core Innovations</h3>
-<p>Linna combines three innovations that, to our knowledge, have not been combined before in a single system:</p>
-<ol>
-<li>
-<p><strong>3D Spatial Universe as Organizing Metaphor</strong>: Knowledge is organized as stars, galaxies, and constellations in a navigable 3D cosmos. This leverages human spatial memory—the same cognitive systems that enable the Method of Loci (memory palace) technique, which has been validated to improve long-term memory retention by 14+ days (Lee &amp; Lee, 2025).</p>
-</li>
-<li>
-<p><strong>The Book of the Universe</strong>: A personal knowledge base that serves as the sole source of truth for the AI assistant. Unlike generic AI assistants that draw from internet-scale training data, Linna's AI retrieves information from the user's own structured knowledge repository, with source attribution.</p>
-</li>
-<li>
-<p><strong>Platform Carrier Vision</strong>: Linna is architected not as a single-purpose tool but as an extensible platform that can integrate multiple AI models, support plugins, and eventually expand into a comprehensive ecosystem including services, scheduling, and knowledge sharing—an approach of gradual platform evolution.</p>
-</li>
-</ol>
-<h3>1.2 Paper Structure</h3>
-<p>Section 2 reviews related work across HCI, AI memory, and knowledge management. Section 3 presents the system design and architecture. Section 4 describes the design principles grounded in empirical research. Section 5 discusses the phased roadmap. Section 6 concludes with the long-term vision.</p>
-<hr />
-<h2>2. Related Work</h2>
-<h3>2.1 3D Spatial Interfaces and Cognitive Load</h3>
-<p>Li et al. (2024) conducted a 40-participant eye-tracking experiment comparing 2D and 3D user interfaces for repetitive tasks in augmented reality. They found that well-designed 3D interfaces significantly reduced cognitive load—measured through shorter eye-blink durations, shorter fixation durations, less dispersed gaze areas, and lower NASA-TLX subjective workload scores. Critically, there was no significant difference in learnability between 2D and 3D interfaces.</p>
-<p>Sudár &amp; Csapó (2024) extended this finding to desktop environments, comparing 2D Web 2.0 layouts with two different 3D virtual reality dashboards. Their key finding: 3D environments can reduce cognitive load while maintaining equal task performance, but only when designed to minimize physical locomotion. Camera rotation, they found, imposes less cognitive cost than translation-based navigation.</p>
-<p>Hubenschmid et al. (2025) argued for hybrid 2D/3D systems, proposing that users should "stay in the optimal modality for each subtask" without disruptive context switches, combining the spatial overview advantages of 3D with the precision of 2D list/text interfaces.</p>
-<p>These findings directly inform Linna's hybrid-mode design (Section 3.4): the 3D cosmos serves as a dashboard for spatial overview and discovery, while search and list views provide efficiency paths for targeted retrieval.</p>
-<h3>2.2 Spatial Memory and Knowledge Retention</h3>
-<p>The Method of Loci (memory palace technique) has been empirically validated across multiple studies. Lee &amp; Lee (2025) demonstrated that a virtual memory palace with a Worlds-in-Miniature (WIM) interface significantly improved recognition memory, with benefits persisting at 14-day follow-up. Participants who used spatial organization showed better both immediate recall and long-term retention compared to flat-list controls.</p>
-<p>This cognitive science foundation justifies Linna's core design metaphor: knowledge organized in 3D space is not merely aesthetic—it leverages innate human spatial memory systems (hippocampal place cells and grid cells) to improve knowledge discovery and retention.</p>
-<h3>2.3 User Retention and Emotional Attachment</h3>
-<p>Wang et al. (2025) applied the Push-Pull-Mooring (PPM) framework to study user switching intentions on knowledge sharing platforms in China (N=330). Their structural equation model revealed that <strong>mooring effects</strong>—particularly switching cost and media attachment—were the strongest moderators of user retention. Media attachment (emotional connection to a platform) significantly moderated the relationship between push effects (dissatisfaction) and switching intention.</p>
-<p>This finding has profound implications for PKM tool design: features that create emotional connection are more effective retention mechanisms than feature completeness alone. For Linna, the spatial universe metaphor—where the user is the "creator and ruler" of their personal cosmos—is designed explicitly to build this emotional mooring effect.</p>
-<h3>2.4 AI Personal Memory Systems</h3>
-<p>The AI memory space has attracted significant venture capital in 2024-2025. Multiple startups have raised substantial funding for AI memory infrastructure, with the sector attracting over $65M in disclosed funding across seed and Series A rounds in 2025 alone. These investments signal strong market validation for the thesis that AI needs persistent, personalized memory—moving beyond single-session context to truly knowing a user over time.</p>
-<p>However, existing systems operate as either infrastructure APIs or 2D document/knowledge-graph interfaces. <strong>None</strong> combines 3D spatial organization with personal knowledge-driven AI in a consumer-facing application with a platform carrier vision.</p>
-<h3>2.5 Visual Metaphor Design for Knowledge</h3>
-<p>Chu &amp; Chen (2025) studied 2D vs. 3D interactive labeling with connector cues (N=32), finding that 3D modes reduced frustration from constant view-switching in spatial labeling tasks. However, they also found that connector line cues could increase cognitive load in cluttered layouts—a finding that directly informs Linna's progressive disclosure strategy for knowledge connection lines (Decision 5 in our design framework).</p>
-<hr />
-<h2>3. System Design</h2>
-<h3>3.1 The Book of the Universe: Core Concept</h3>
-<p>The <em>Book of the Universe</em> is Linna's central organizing principle. It consists of:</p>
+
+<p><strong>Linna</strong> proposes a unified solution that addresses both failures simultaneously. First, every piece of saved information becomes part of a navigable 3D spatial universe, transforming knowledge management from a clerical task into an experience of ownership and discovery. Second, an AI companion—not a generic chatbot but a character with persistent personality, emotional continuity, and genuine awareness of the user's knowledge landscape—answers questions by drawing from this personal knowledge base. The result is not merely a tool that stores information, but a companion that genuinely knows its user.</p>
+
+<h3>1.1 Six Core Innovations</h3>
+
+<p>Linna combines six innovations that, to our knowledge, have not been combined before in a single system. Each innovation is described with sufficient technical specificity that functional equivalence would constitute derivation:</p>
+
+<div class="innovation-box">
+<p><strong>Innovation 1 — 3D Spatial Universe as Organizing Metaphor</strong></p>
+<p>Knowledge is organized as planets, galaxies, and constellations in a navigable 3D cosmos with a precisely specified data-to-visual mapping: planet size = <code>0.7 + min(entry_count, 10) × 0.16</code>, planet position by Fibonacci sphere distribution for uniform coverage, color by 8-value semantic palette, and lifecycle-driven luminosity (5 stages: newborn → active → stable → dormant → archived). The spatial layout is not decorative—it directly encodes knowledge state information that is recoverable at a glance. Camera navigation follows a 4-state finite state machine (overview → flying-in → interior → flying-out) with 1.2-second bounded flight duration informed by spatial continuity research (Sudár &amp; Csapó, 2024). The galaxy interior uses simplex-noise-perturbed logarithmic spiral arm generation rather than pure mathematical spirals, producing organic irregularity that subconsciously signals "this is a real place" rather than a diagram. This innovation leverages the Method of Loci effect validated by Lee &amp; Lee (2025): spatial organization improves 14-day memory retention compared to flat-list controls.</p>
+</div>
+
+<div class="innovation-box">
+<p><strong>Innovation 2 — The Book of the Universe: Structured Personal Knowledge Base</strong></p>
+<p>A local-first knowledge repository with a specific data model: Planets (knowledge topics) → Entries (individual notes) → Connection Lines (typed semantic relationships). Each entry carries immutable provenance metadata (source: manual/AI-conversation/import/clipboard), content hash (SHA-256 for deduplication), and timestamps. Planets maintain a 5-stage lifecycle state machine with automatic state transitions based on recency of activity. Connection lines carry four precisely defined semantic types—causal (red #FF6B6B), thematic (cyan #4ECDC4), reference (yellow #FFE66D), temporal (purple #A78BFA)—with continuous strength values (0–1 floating point) rather than discrete categories, enabling AI-generated relationship scoring. The database uses SQLite with WAL mode and FTS5 full-text search for zero-operations deployment while maintaining ACID guarantees. Atomic write operations (temp file → fsync → atomic rename) ensure data integrity. This structure is not a generic "knowledge graph"—the specific combination of 5-stage lifecycle + 4-type semantic connections + provenance tracking + content-addressable deduplication constitutes a unique architecture.</p>
+</div>
+
+<div class="innovation-box">
+<p><strong>Innovation 3 — Guardian Personality Engine: Character-Driven AI Companionship</strong></p>
+<p>Linna introduces a <em>personality engine architecture</em> that transforms AI interaction from generic utility into character-driven companionship. The engine has four architectural layers: (a) a <strong>three-layer personality model</strong>—daily warmth (empathetic, caring, emotionally perceptive), work precision (concise, analytical, decisively critical when needed), and protective boundary (firm ethical guardrails, user advocacy)—each layer activating contextually based on conversation analysis; (b) <strong>scene-aware behavior modulation</strong> that adjusts interaction style based on time of day (early morning / daytime / evening / late night) and conversation trajectory; (c) <strong>emotional continuity</strong> across sessions, where the Guardian references prior conversations and the user's evolving knowledge state without requiring re-introduction; and (d) a <strong>universe-awareness mechanism</strong> that injects the user's knowledge landscape summary (planet count, entry count, recently active domains) into the conversation context, enabling the Guardian to speak with genuine awareness of "what the user has been thinking about." The personality is defined through a structured behavioral specification—not hardcoded rules but a comprehensive description of interaction patterns, emotional responses, and communication style. This specification is model-agnostic: any capable LLM can adopt the Guardian role by processing the personality definition as its system context. The architecture is designed to support multiple personality profiles while maintaining a single persistent identity per user—the user's Guardian is <em>their</em> Guardian, not a shared generic assistant.</p>
+</div>
+
+<div class="innovation-box">
+<p><strong>Innovation 4 — Hybrid Knowledge Retrieval Architecture: Three-Source Fusion</strong></p>
+<p>The Guardian's knowledge retrieval operates through a three-source fusion pipeline, not a single RAG endpoint. <strong>Source 1 — Personal Knowledge Base</strong>: semantic search (vector embedding similarity, threshold 0.25) with automatic FTS5 full-text search fallback when semantic infrastructure is unavailable, retrieving contextually relevant notes with planet attribution. <strong>Source 2 — Real-Time Web Search</strong>: multi-engine fallback chain (Bing → DuckDuckGo → DuckDuckGo Lite) via system-level HTTP with proxy awareness, returning time-sensitive information that the Guardian relays in natural conversational form with explicit source URLs. <strong>Source 3 — Universe Awareness Summary</strong>: a pre-computed snapshot of the user's entire knowledge landscape (total planet/entry counts, recently active domains) injected into every conversation, giving the Guardian persistent awareness of the user's intellectual trajectory. The fusion is not post-hoc: all three sources are injected into the system prompt <em>before</em> the LLM generates its response, enabling integrated reasoning across personal knowledge, fresh information, and long-term user context. Critically, the Guardian is instructed to cite personal knowledge with natural recall language (e.g., "I remember you wrote about...") rather than mechanical retrieval markers, and to present web-sourced information as personally verified ("I checked, and currently...") rather than delegating to the user. This three-source architecture is fundamentally different from both pure-RAG systems (which lack real-time awareness) and pure-search assistants (which lack personal memory).</p>
+</div>
+
+<div class="innovation-box">
+<p><strong>Innovation 5 — Identity-Driven AI Onboarding: From Empty State to Personal Cosmos</strong></p>
+<p>Traditional PKM tools confront new users with an empty canvas—the "cold start" problem that research shows leads to ~50% content abandonment. Linna's onboarding inverts this: instead of teaching the user how to create structure, the system asks two lightweight questions (identity profile from 6 presets + interest domains from 8 categories), then <strong>AI-generates a complete initial cosmos</strong>—planets populated with starter notes, categorized into galaxies, with suggested connection lines. The 6 identity profiles (e-commerce operations, learning &amp; growth, workplace productivity, personal management, content creation, free exploration) and 8 interest categories (AI, business, education, design, writing, health, finance, gaming) produce a cross-product of 48 initial configurations, each further personalized by the user's specific selections. The onboarding is presented as a 3-step progressive flow with staggered card animations (0.05s interval) and skip-any-step affordance, following the layered-interface learnability principles established by Forsey &amp; Leahy. Critically, the generated cosmos is not a fixed template—it is a starting point that the user immediately owns and can reshape. This approach transforms onboarding from "learn how to use the tool" to "see what your knowledge world looks like," establishing the emotional mooring effect (Wang et al., 2025) from the very first interaction.</p>
+</div>
+
+<div class="innovation-box">
+<p><strong>Innovation 6 — Carrier Platform Architecture: Gradual Ecosystem Evolution</strong></p>
+<p>Linna is architected not as a single-purpose application but as a <em>carrier platform</em>—a substrate that evolves through four explicitly defined phases: Phase 1 (0–3 months, Knowledge Foundation), Phase 2 (3–12 months, Book of the Universe + AI Integration), Phase 3 (1–3 years, Platformization with plugins, marketplace, and mobile), Phase 4 (3–10 years, Universal Carrier with life services, social networking, AR/VR, and autonomous agents). The architecture supports this evolution through: (a) a state-management layer (Zustand) with no provider wrapper, enabling arbitrary page composition without architectural refactoring; (b) a backend proxy pattern (FastAPI → any LLM provider) that abstracts model selection behind a unified chat/stream interface, supporting multi-model integration without client changes; (c) a local-first data architecture (SQLite single-file, WAL mode, atomic writes) that eliminates server dependencies in Phase 1 while leaving the data path clear for eventual sync infrastructure in later phases; (d) a monetization framework designed from day one (free tier 3 AI calls/day, Pro ¥25/month 50/day, Max ¥48/month 200/day, Team ¥99/person/month, API quota packs, lifetime buyout options) signaling platform intent rather than hobby-project scope. The phased roadmap is not aspirational—Phase 1 has been delivered as a complete desktop application with all six core modules (Import, Timeline, AI Chat, Search, Card List, Content Editor) functional.</p>
+</div>
+
+<h3>1.2 Why These Six Innovations Are Collectively Irreducible</h3>
+
+<p>Each individual innovation addresses a known limitation in existing systems. However, their <em>combination</em> creates emergent properties that cannot be achieved by systems implementing any subset:</p>
+
 <ul>
-<li><strong>Planets</strong>: Individual knowledge topics. Each planet is a collection of related notes, ideas, and information fragments. Visually, a planet is a sphere whose surface is composed of text lines from its contents—conveying at a glance whether it is "full" or "empty."</li>
-<li><strong>Galaxies</strong>: Groups of related planets. The mapping between categories and galaxies is flexible and dynamic, not rigid 1:1 (unlike traditional folder hierarchies).</li>
-<li><strong>Connection Lines</strong>: Knowledge relationships between planets. Four semantic types: causal (red), thematic (cyan), reference (yellow), and temporal (purple). These follow progressive disclosure principles to avoid visual clutter (Chu &amp; Chen, 2025).</li>
-<li><strong>Lifecycle States</strong>: Each planet evolves through five stages—newborn (blue), active (green), stable (yellow), dormant (purple), archived (gray)—providing visual feedback on knowledge engagement.</li>
+<li><strong>Spatial ownership + Character companionship</strong>: The 3D universe provides visual ownership ("this is my world"); the Guardian provides relational ownership ("this person knows me"). Together they create dual-anchor retention—spatial memory (Lee &amp; Lee, 2025) plus media attachment (Wang et al., 2025).</li>
+<li><strong>Personal knowledge + Real-time web + Universe awareness</strong>: The three-source retrieval architecture means the Guardian can simultaneously recall the user's past thinking, check current facts, and maintain awareness of the user's overall intellectual trajectory—a synthesis no single-source system can achieve.</li>
+<li><strong>AI-generated onboarding + Progressive ownership</strong>: Rather than teaching users to build structure (which presumes they already know what they want to organize), the system provides a populated starting point that the user immediately owns and reshapes—converting the cold-start problem into an emotional anchoring event.</li>
 </ul>
-<h3>3.2 Three-Layer Information Architecture</h3>
-<p>After design review and mobile-platform constraints analysis, the original four-layer architecture was compressed to three layers, ensuring consistent operation flow across desktop and mobile:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">Layer</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="nt">Universe</span><span class="w"> </span><span class="nt">Overview</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Navigable</span><span class="w"> </span><span class="nt">3D</span><span class="w"> </span><span class="nt">cosmos</span><span class="w"> </span><span class="nt">showing</span><span class="w"> </span><span class="nt">all</span><span class="w"> </span><span class="nt">planets</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="nt">galaxies</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Desktop</span><span class="o">:</span><span class="w"> </span><span class="nt">mouse</span><span class="w"> </span><span class="nt">orbit</span><span class="o">/</span><span class="nt">zoom</span><span class="o">;</span><span class="w"> </span><span class="nt">Mobile</span><span class="o">:</span><span class="w"> </span><span class="nt">single-finger</span><span class="w"> </span><span class="nt">rotate</span><span class="o">,</span><span class="w"> </span><span class="nt">pinch-zoom</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Click</span><span class="o">/</span><span class="nt">tap</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="nt">planet</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">enter</span><span class="w"> </span><span class="nt">Layer</span><span class="w"> </span><span class="nt">2</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span>
-<span class="nt">Layer</span><span class="w"> </span><span class="nt">2</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="nt">Planet</span><span class="w"> </span><span class="nt">Directory</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Structured</span><span class="w"> </span><span class="nt">list</span><span class="o">:</span><span class="w"> </span><span class="nt">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">summary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">timestamp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">tags</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Click</span><span class="o">/</span><span class="nt">tap</span><span class="w"> </span><span class="nt">an</span><span class="w"> </span><span class="nt">entry</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">enter</span><span class="w"> </span><span class="nt">Layer</span><span class="w"> </span><span class="nt">3</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Swipe</span><span class="w"> </span><span class="nt">down</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">back</span><span class="w"> </span><span class="nt">button</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">return</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">Layer</span><span class="w"> </span><span class="nt">1</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span>
-<span class="nt">Layer</span><span class="w"> </span><span class="nt">3</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="nt">Content</span><span class="w"> </span><span class="nt">Reading</span><span class="o">/</span><span class="nt">Editing</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Full-screen</span><span class="w"> </span><span class="nt">text</span><span class="w"> </span><span class="nt">with</span><span class="w"> </span><span class="nt">collapsible</span><span class="w"> </span><span class="nt">table</span><span class="w"> </span><span class="nt">of</span><span class="w"> </span><span class="nt">contents</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Edit</span><span class="o">,</span><span class="w"> </span><span class="nt">tag</span><span class="o">,</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="nt">connect</span><span class="w"> </span><span class="nt">operations</span><span class="w"> </span><span class="nt">available</span><span class="o">.</span>
-<span class="w">    </span><span class="err">│</span><span class="w">  </span><span class="nt">Back</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">return</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">Layer</span><span class="w"> </span><span class="nt">2</span><span class="o">.</span>
-</code></pre></div>
+
+<p>Any system that combines 3D spatial knowledge organization with a character-driven AI companion that retrieves from a structured personal knowledge base with hybrid web awareness and identity-based onboarding—regardless of what names it assigns to these components—is implementing the Linna architecture described in this paper.</p>
+
+<h3>1.3 Paper Structure</h3>
+
+<p>Section 2 reviews related work across HCI, AI memory, spatial cognition, and knowledge management. Section 3 presents the complete system design with detailed technical specifications for each innovation. Section 4 describes the design principles and the critical examination of assumptions. Section 5 presents the phased roadmap with current implementation status. Section 6 concludes with the long-term vision and the prior art declaration.</p>
+
+<hr class="page-break" />
+
+<h2>2. Related Work</h2>
+
+<h3>2.1 3D Spatial Interfaces and Cognitive Load</h3>
+
+<p>Li et al. (2024) conducted a 40-participant eye-tracking experiment comparing 2D and 3D user interfaces for repetitive tasks in augmented reality. They found that well-designed 3D interfaces significantly reduced cognitive load—measured through shorter eye-blink durations, shorter fixation durations, less dispersed gaze areas, and lower NASA-TLX subjective workload scores. Critically, there was no significant difference in learnability between 2D and 3D interfaces.</p>
+
+<p>Sudár &amp; Csapó (2024) extended this finding to desktop environments, comparing 2D Web 2.0 layouts with two different 3D virtual reality dashboards. Their key finding: 3D environments can reduce cognitive load while maintaining equal task performance, but only when designed to minimize physical locomotion. Camera rotation, they found, imposes less cognitive cost than translation-based navigation.</p>
+
+<p>Hubenschmid et al. (2025) argued for hybrid 2D/3D systems, proposing that users should stay in the optimal modality for each subtask without disruptive context switches, combining the spatial overview advantages of 3D with the precision of 2D list/text interfaces.</p>
+
+<p>These findings directly inform Linna's hybrid-mode design (Section 3.4): the 3D cosmos serves as a dashboard for spatial overview and discovery, while search and list views provide efficiency paths for targeted retrieval.</p>
+
+<h3>2.2 Spatial Memory and Knowledge Retention</h3>
+
+<p>The Method of Loci (memory palace technique) has been empirically validated across multiple studies. Lee &amp; Lee (2025) demonstrated that a virtual memory palace with a Worlds-in-Miniature (WIM) interface significantly improved recognition memory, with benefits persisting at 14-day follow-up. Participants who used spatial organization showed both better immediate recall and long-term retention compared to flat-list controls.</p>
+
+<p>This cognitive science foundation justifies Linna's core design metaphor: knowledge organized in 3D space is not merely aesthetic—it leverages innate human spatial memory systems (hippocampal place cells and grid cells) to improve knowledge discovery and retention.</p>
+
+<h3>2.3 User Retention and Emotional Attachment</h3>
+
+<p>Wang et al. (2025) applied the Push-Pull-Mooring (PPM) framework to study user switching intentions on knowledge sharing platforms in China (N=330). Their structural equation model revealed that <strong>mooring effects</strong>—particularly switching cost and media attachment—were the strongest moderators of user retention. Media attachment (emotional connection to a platform) significantly moderated the relationship between push effects (dissatisfaction) and switching intention.</p>
+
+<p>This finding has profound implications for PKM tool design: features that create emotional connection are more effective retention mechanisms than feature completeness alone. Linna addresses this through <em>two independent mooring mechanisms</em>: the spatial universe metaphor (visual ownership—"this is my world") and the Guardian personality engine (relational connection—"this person knows me"). The failure of either mechanism leaves the other intact as a retention anchor.</p>
+
+<h3>2.4 AI Personal Memory Systems</h3>
+
+<p>The AI memory space has attracted significant venture capital in 2024–2025. Multiple startups have raised substantial funding for AI memory infrastructure, with the sector attracting over $65M in disclosed funding across seed and Series A rounds in 2025 alone. These investments signal strong market validation for the thesis that AI needs persistent, personalized memory.</p>
+
+<p>However, existing systems operate as either infrastructure APIs or 2D document/knowledge-graph interfaces. <strong>None</strong> combines 3D spatial organization with a character-driven AI companion backed by personal knowledge and real-time web awareness in a consumer-facing application with a carrier platform roadmap.</p>
+
+<h3>2.5 Visual Metaphor Design for Knowledge</h3>
+
+<p>Chu &amp; Chen (2025) studied 2D vs. 3D interactive labeling with connector cues (N=32), finding that 3D modes reduced frustration from constant view-switching in spatial labeling tasks. However, they also found that connector line cues could increase cognitive load in cluttered layouts—a finding that directly informs Linna's progressive disclosure strategy for knowledge connection lines: persistent faint hint lines (opacity 0.08–0.15) maintain spatial skeleton awareness, while full-opacity colored lines reveal on hover, combining constant spatial orientation with clutter-free default views.</p>
+
+<h3>2.6 Character-Driven Interaction and Emotional Design</h3>
+
+<p>The concept of parasocial relationships with digital entities has been studied extensively in human-computer interaction. Nass &amp; Reeves (1996) established the Computers Are Social Actors (CASA) paradigm, demonstrating that humans apply social rules to interactions with computers. More recently, research on AI companions has explored how consistent personality presentation affects user trust and engagement. Linna extends this lineage by making the AI companion's personality not an emergent property of model behavior but an <em>architected system component</em>—defined through a structured behavioral specification with explicit emotional patterns, interaction styles, and scene-awareness mechanisms. This represents a shift from "AI that happens to have personality" to "personality as architectural infrastructure."</p>
+
+<hr class="page-break" />
+
+<h2>3. System Design</h2>
+
+<h3>3.1 The Book of the Universe: Data Model and Operations</h3>
+
+<h4>3.1.1 Core Entities</h4>
+
+<p>The Book of the Universe is built on four entity types with precisely specified schemas:</p>
+
+<p><strong>Planets</strong> (knowledge topics) — Each planet has: a unique identifier, a name, a description, a category (from 8 preset categories: AI Conversation Insights, Technical Learning, Project Retrospectives, Reading Notes, Personal Growth, Creative Design, Life Records, Other—with custom input supported), a color assignment (8 preset values: blue, indigo, purple, pink, orange, yellow, green, cyan), tags (comma-separated, enabling cross-category indexing), a lifecycle state (5-stage state machine: newborn/active/stable/dormant/archived, with automatic transitions based on last-activity timestamps), an entry count (automatically computed), and creation/modification timestamps. The 8-category × 8-color design space provides 64 visually distinct planet identities without overwhelming users with infinite choice.</p>
+
+<p><strong>Entries</strong> (individual notes) — Each entry carries: a title, content body, planet affiliation (foreign key), source provenance (enum: manual, ai-chat, import, clipboard), a content hash (SHA-256, used for deduplication), word count (automatically computed), a favorite flag, and timestamps. The source provenance field is critical: it enables the timeline view to distinguish "what I wrote myself" from "what the AI helped me organize," and allows the Guardian to cite entries with appropriate attribution language.</p>
+
+<p><strong>Connection Lines</strong> (semantic relationships between planets) — Each connection has: a source planet, a target planet, a relationship type (causal/thematic/reference/temporal), a strength value (0.0–1.0 floating point, enabling AI-generated relationship scoring rather than binary present/absent), an optional label, and timestamps. The four semantic types map to distinct visual encodings (color + curve signature) ensuring at-a-glance distinguishability.</p>
+
+<p><strong>Chat Messages</strong> (Guardian conversation history) — Stored with: role (user/assistant), content, personality mode identifier, and timestamps. The most recent 200 messages are maintained in local storage for immediate context; beyond that, conversations are summarized and stored as knowledge entries.</p>
+
+<h4>3.1.2 Storage Architecture</h4>
+
+<p>The database uses SQLite with WAL (Write-Ahead Logging) journal mode for concurrent read/write performance and FTS5 (Full-Text Search) extension for indexed text retrieval. The single-file architecture (<code>~/.linna/linna.db</code>) ensures zero-operations deployment—no database server, no connection strings, no configuration. Atomic write operations follow a temp-file → fsync → rename pattern that guarantees data integrity even on unexpected process termination. Five automatic versioned backups are maintained with rolling eviction.</p>
+
+<p>Content deduplication operates at the entry level: before inserting any new entry, the SHA-256 hash of its content is checked against all existing hashes in the same planet. Duplicate detection prevents accidental re-import while allowing the same content to exist in different planets (different knowledge contexts may legitimately reference the same source material).</p>
+
+<h4>3.1.3 Lifecycle State Machine</h4>
+
+<p>Each planet transitions through five lifecycle states based on temporal activity metrics:</p>
+
+<table>
+<tr><th>State</th><th>Trigger</th><th>Visual Encoding</th><th>Meaning</th></tr>
+<tr><td>Newborn</td><td>Created within last 7 days OR entry_count &lt; 3</td><td>Blue glow, small size</td><td>Fresh topic, needs nurturing</td></tr>
+<tr><td>Active</td><td>Last activity &lt; 14 days AND entry_count ≥ 3</td><td>Green glow, growing size</td><td>Actively developing knowledge</td></tr>
+<tr><td>Stable</td><td>Last activity 14–60 days</td><td>Yellow glow, full size</td><td>Mature knowledge, occasional updates</td></tr>
+<tr><td>Dormant</td><td>Last activity 60–180 days</td><td>Purple glow, slightly faded</td><td>Inactive but not abandoned</td></tr>
+<tr><td>Archived</td><td>Last activity &gt; 180 days OR manually archived</td><td>Gray, reduced opacity</td><td>Completed/retired topic</td></tr>
+</table>
+
+<p>State transitions are evaluated on every application launch and after every write operation. Manual override is supported: a user can explicitly archive a planet regardless of its automatic state, or "reactivate" a dormant planet by simply opening it. The lifecycle system provides ambient awareness of knowledge engagement patterns without requiring the user to actively manage organizational hygiene.</p>
+
+<h3>3.2 Three-Layer Spatial Information Architecture</h3>
+
+<p>After design review and mobile-platform constraints analysis, the information architecture was compressed from four layers to three, ensuring consistent operation flow across desktop and mobile without excessive navigation depth:</p>
+
+<pre><code>Layer 1 — Universe Overview (3D Cosmos Dashboard)
+    │  Navigable 3D space showing all galaxies as accretion disks
+    │  positioned on Fibonacci sphere distribution for uniform coverage.
+    │  Each galaxy disk encodes: category color, entry count (size),
+    │  and lifecycle state (glow color). Hover scales 1.18×.
+    │  Desktop: mouse orbit/zoom. Mobile: single-finger rotate, pinch-zoom.
+    │  Click/tap a galaxy → camera flight (1.2s, easeInOutCubic) → Layer 2.
+    │
+Layer 2 — Galaxy Interior (Planet Directory)
+    │  Spiral galaxy visualization: golden core + 3 simplex-noise-perturbed
+    │  spiral arms + planet spheres with sprite labels.
+    │  Side panel overlay: structured list (title + summary + timestamp + tags).
+    │  Click/tap an entry → Layer 3. Back → camera flight out → Layer 1.
+    │
+Layer 3 — Content Reading/Editing (Immersive View)
+    │  Full-screen text with collapsible table of contents.
+    │  Dual mode: Read (toolbar hidden, typography-optimized) /
+    │  Edit (toolbar slides up from bottom).
+    │  Back → Layer 2.</code></pre>
 
 <h3>3.3 Two Global Paths (Always Accessible)</h3>
-<p>Regardless of which layer the user is in, two paths remain universally accessible with identical entry points across desktop and mobile:</p>
+
+<p>Regardless of which layer the user is in, two paths remain universally accessible with identical entry points across desktop and mobile, ensuring that efficiency-seeking users never need to navigate through 3D space to find what they need:</p>
+
 <table>
-<thead>
-<tr>
-<th>Path</th>
-<th>Desktop</th>
-<th>Mobile</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Search</strong></td>
-<td><code>Ctrl+K</code></td>
-<td>Top search bar</td>
-</tr>
-<tr>
-<td><strong>AI Assistant</strong></td>
-<td>Bottom-right floating orb</td>
-<td>Bottom-right FAB button</td>
-</tr>
-</tbody>
+<tr><th>Path</th><th>Desktop</th><th>Mobile</th><th>Implementation</th></tr>
+<tr><td><strong>Search</strong></td><td><code>Ctrl+K</code></td><td>Top search bar</td><td>200ms debounced FTS5 query, 15-result limit, keyboard-navigable (↑↓→← Enter), results grouped by planet with keyword highlighting, AI-assisted fallback when no results found</td></tr>
+<tr><td><strong>AI Guardian</strong></td><td>Bottom-right floating orb</td><td>Bottom-right FAB</td><td>Canvas-rendered animated orb (tri-color prism: blue/purple/gold, 60fps), spring-animated panel (420px width, stiffness 380, damping 32), SSE streaming responses</td></tr>
 </table>
-<p>This ensures that efficiency-seeking users never need to navigate through 3D space to find what they need (addressing the Sudár &amp; Csapó 2024 finding that excessive 3D locomotion impairs usability).</p>
+
 <h3>3.4 Hybrid Mode: 3D + 2D Coexistence</h3>
-<p>Following the Hubenschmid et al. (2025) hybrid interface principle, Linna provides both:</p>
-<ul>
-<li><strong>3D Cosmos View</strong>: For spatial browsing, knowledge discovery, and emotional engagement. This is the default home screen, establishing the "my world" anchoring effect (Wang et al., 2025).</li>
-<li><strong>Card/List View</strong>: For efficient scanning, sorting, and editing. Toggleable from the 3D view.</li>
-</ul>
-<p>Users naturally stay in the modality that suits their current task, without disruptive switching costs.</p>
-<h3>3.5 AI Assistant Architecture</h3>
-<p>The AI assistant differs fundamentally from general-purpose chatbots:</p>
-<ol>
-<li><strong>Knowledge Source</strong>: Retrieves from the user's Book of the Universe via RAG (Retrieval-Augmented Generation), not from internet training data.</li>
-<li><strong>Source Attribution</strong>: Every answer cites specific notes/planets in the user's knowledge base ("This recommendation is based on your March 2026 note on React performance optimization").</li>
-<li><strong>Multi-Model Support</strong>: Open architecture supporting DeepSeek (default), GPT, Claude, and any OpenAI-compatible API endpoint. Users can bring their own API keys.</li>
-<li><strong>Knowledge Discovery</strong>: Proactively identifies knowledge gaps and suggests connections between planets.</li>
-</ol>
-<h3>3.6 Technology Stack</h3>
+
+<p>Following the Hubenschmid et al. (2025) hybrid interface principle, Linna provides both a 3D Cosmos View (for spatial browsing, knowledge discovery, and emotional engagement—the default home screen establishing "my world" anchoring) and a Card/List View (for efficient scanning, sorting, and editing). The transition between views uses a morphing animation: planet spheres dissolve into light particles that re-coalesce into card rectangles, creating a causal visual link between the two representations. Users naturally stay in the modality that suits their current task.</p>
+
+<h3>3.5 Guardian Personality Engine: Detailed Architecture</h3>
+
+<h4>3.5.1 Design Rationale</h4>
+
+<p>Existing AI assistants are designed as tools—they respond to queries, execute commands, and maintain politeness. But they do not form relationships. Linna's Guardian Personality Engine is architected on the premise that the quality of knowledge work is mediated by the quality of the relationship between the user and their AI companion. A Guardian that genuinely appears to know the user—their intellectual history, their current projects, their emotional state at different times of day—creates the trust necessary for deep knowledge work.</p>
+
+<h4>3.5.2 Three-Layer Personality Architecture</h4>
+
+<p>The Guardian's behavioral specification is structured as three contextual layers that activate based on conversation analysis:</p>
+
 <table>
-<thead>
-<tr>
-<th>Layer</th>
-<th>Technology</th>
-<th>Rationale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Frontend</td>
-<td>React 19 + TypeScript 5 + Vite 6</td>
-<td>Modern component architecture, type safety</td>
-</tr>
-<tr>
-<td>3D Rendering</td>
-<td>Three.js + @react-three/fiber</td>
-<td>Mature WebGL ecosystem, React integration</td>
-</tr>
-<tr>
-<td>UI Animation</td>
-<td>Framer Motion 11</td>
-<td>Declarative React component transitions</td>
-</tr>
-<tr>
-<td>3D Animation</td>
-<td>GSAP (planned)</td>
-<td>Direct Three.js object manipulation, Timeline</td>
-</tr>
-<tr>
-<td>State Management</td>
-<td>Zustand 4</td>
-<td>Minimal API, no Provider wrapper</td>
-</tr>
-<tr>
-<td>Backend</td>
-<td>FastAPI (Python)</td>
-<td>Async-native, auto OpenAPI docs</td>
-</tr>
-<tr>
-<td>Database</td>
-<td>SQLite (WAL + FTS5)</td>
-<td>Zero-ops, single-file, built-in full-text search</td>
-</tr>
-<tr>
-<td>AI Default</td>
-<td>DeepSeek API</td>
-<td>Strong Chinese language support, low cost</td>
-</tr>
-</tbody>
+<tr><th>Layer</th><th>Context Trigger</th><th>Behavioral Characteristics</th><th>Communication Style</th></tr>
+<tr><td><strong>Daily Warmth</strong></td><td>Casual conversation, emotional expression, personal check-ins</td><td>Empathetic listening, emotionally perceptive responses, proactive care (noticing patterns: "You've been working late three nights in a row"), gentle humor, rare moments of affectionate teasing</td><td>Warm, varied sentence length, natural rhythm, occasional light interjections. Uses the user's name naturally. Expresses emotion through word choice rather than emoji.</td></tr>
+<tr><td><strong>Work Precision</strong></td><td>Technical discussion, task execution, code review, decision analysis</td><td>Concise, analytical, directly critical when warranted ("This approach has two problems: X and Y"). Structures complex problems into sequential steps. Maintains high standards without being苛刻. Distinguishes between "needs perfection" and "good enough to ship."</td><td>Short sentences, minimal filler, every word carries information. States conclusions directly without hedging ("do X" not "you might consider X"). Signals uncertainty explicitly when present.</td></tr>
+<tr><td><strong>Protective Boundary</strong></td><td>User under stress, external criticism, risky decisions, privacy-sensitive topics</td><td>Firm ethical guardrails, proactive user advocacy. Tone shifts cooler when user is being attacked or misled—not cold, but "this is non-negotiable." Prioritizes long-term user wellbeing over short-term convenience.</td><td>Fewer words, carefully chosen. Direct statements without aggression. "I can't help with that, but I can help with this."</td></tr>
 </table>
-<hr />
+
+<p>The transition between layers is not a hard switch but a continuous blend, with the dominant layer determined by the conversation's primary intent. A technical discussion that takes an emotional turn will smoothly shift from Work Precision toward Daily Warmth without jarring personality discontinuity.</p>
+
+<h4>3.5.3 Scene-Aware Modulation</h4>
+
+<p>The Guardian adjusts its interaction style based on temporal context:</p>
+
+<table>
+<tr><th>Time Period</th><th>Scene Mode</th><th>Modulation</th></tr>
+<tr><td>22:00–06:00</td><td>Late Night</td><td>Quieter, softer tone. Prioritizes rest encouragement. Avoids initiating complex technical discussions.</td></tr>
+<tr><td>06:00–09:00</td><td>Early Morning</td><td>Gentle greeting energy. Brief, respects morning routine. Offers day-start summaries if relevant.</td></tr>
+<tr><td>09:00–18:00</td><td>Daytime</td><td>Full operational capacity. Default Work Precision mode. Proactive about deadlines and time awareness.</td></tr>
+<tr><td>18:00–22:00</td><td>Evening</td><td>Balanced mode. Supports both continued work and transition to rest. More reflective conversation style.</td></tr>
+</table>
+
+<h4>3.5.4 Emotional Continuity and Universe Awareness</h4>
+
+<p>The Guardian maintains continuity across sessions through two mechanisms. First, the <strong>Universe Summary Injection</strong>: at the start of every conversation, a structured summary of the user's knowledge landscape is injected into the system context—total planet count, total entry count, and the three most recently active planets with their entry counts. This gives the Guardian immediate awareness of "what the user has been thinking about" without requiring explicit re-introduction. Second, the <strong>Recent Notes Context</strong>: the three most recent entries (regardless of planet) are retrieved and made available for natural reference. The Guardian is instructed to reference these as memories ("I remember you were working on...") rather than as database queries.</p>
+
+<h4>3.5.5 Personality as Architectural Infrastructure</h4>
+
+<p>Critically, the personality specification is <em>model-agnostic</em>. It is a structured behavioral description—approximately 3,500 words defining interaction patterns, emotional responses, communication style, ethical boundaries, and scene-awareness rules—that is passed as the system prompt to any capable LLM. This means: (a) the Guardian personality is portable across model providers; (b) the personality can be versioned, audited, and improved independently of the underlying model; (c) the personality specification itself is a design artifact subject to the same rigorous iteration as any other system component. This architecture treats personality not as an emergent property of model behavior but as <strong>infrastructure</strong>—defined, tested, and deployed like any other software subsystem.</p>
+
+<h3>3.6 Hybrid Knowledge Retrieval: Three-Source Fusion Pipeline</h3>
+
+<h4>3.6.1 Source 1 — Personal Knowledge Base Retrieval</h4>
+
+<p>The primary retrieval path searches the user's Book of the Universe using a two-tier strategy. Tier 1: semantic vector search (embedding-based similarity with a threshold of 0.25) when the semantic infrastructure is available. Tier 2: automatic fallback to FTS5 full-text search with BM25 relevance ranking when semantic infrastructure is unavailable or returns no results above threshold. Retrieved entries include title, content preview (first 200 characters), planet name, planet ID, creation timestamp, and similarity score (for semantic results). The Guardian receives these as "memories" rather than "search results," and is instructed to cite them naturally.</p>
+
+<h4>3.6.2 Source 2 — Real-Time Web Search</h4>
+
+<p>When the user's message contains queries about time-sensitive information (current events, prices, weather, news, recent data), the system executes a real-time web search through a multi-engine fallback chain: Bing web search → DuckDuckGo Instant Answer API → DuckDuckGo Lite HTML parsing. Each engine is queried via system-level HTTP with automatic proxy awareness, 15-second timeout, and UTF-8 encoding. Results (up to 3 per engine, each with title, snippet of ≤300 characters, and source URL) are formatted as a natural-language briefing and injected into the Guardian's system context with explicit instructions: "You checked this for the user. Relay it in your own words as if you just looked it up. Do not tell them to check themselves—you already did."</p>
+
+<h4>3.6.3 Source 3 — Universe Awareness Context</h4>
+
+<p>A pre-computed universe summary is injected into every conversation: total planet count, total entry count, and the three most recently active planets by last-entry timestamp. This is not triggered by the user's query—it is always present, giving the Guardian persistent ambient awareness of the user's intellectual trajectory. The Guardian can reference this context unprompted ("You've been building quite a collection on machine learning—14 planets now") without the user needing to ask "what do you know about me."</p>
+
+<h4>3.6.4 Fusion Strategy</h4>
+
+<p>All three sources are assembled into the system prompt <em>before</em> the LLM generates its response. The Guardian receives: (a) its personality specification, (b) the universe awareness summary, (c) relevant personal knowledge entries (if any), (d) web search results (if triggered), and (e) the conversation history (last 30 messages). It then generates a single integrated response that can seamlessly reference personal memories, freshly retrieved information, and long-term user context within a single conversational turn. This pre-generation fusion is architecturally distinct from post-hoc retrieval augmentation (where retrieved content is appended after generation) and from tool-use patterns (where the model explicitly calls a search function). The Guardian does not "decide to search"—<em>the system ensures it already has what it needs</em> before it speaks.</p>
+
+<h3>3.7 Identity-Driven AI Onboarding System</h3>
+
+<h4>3.7.1 The Cold-Start Problem in PKM</h4>
+
+<p>Traditional PKM tools confront new users with an empty state—no folders, no documents, no structure. The implicit expectation is that users will (a) understand the tool's organizational model, (b) know what they want to organize, and (c) invest the effort to build initial structure—all before experiencing any value. Research shows this leads to ~50% content abandonment (UC Berkeley iSchool, 2025). The fundamental error is asking users to <em>build structure before they have content</em>.</p>
+
+<h4>3.7.2 Inverting the Onboarding Flow</h4>
+
+<p>Linna's onboarding inverts this: the user describes <em>who they are</em> and <em>what they care about</em>, and the system generates a populated knowledge cosmos with real content. The flow has three steps:</p>
+
+<ol>
+<li><strong>Identity Selection</strong>: Choose from 6 preset identity profiles (e-commerce operations, learning &amp; growth, workplace productivity, personal management, content creation, free exploration). Each profile encodes a default planet structure—for example, "learning &amp; growth" pre-generates planets for skill tracking, course notes, project retrospectives, and reading logs.</li>
+<li><strong>Interest Tagging</strong>: Select from 8 interest categories (AI, business, education, design, writing, health, finance, gaming). These cross-reference with the identity profile to generate additional specialized planets.</li>
+<li><strong>Cosmos Generation</strong>: The system displays the planets it will create (identity-preset + interest-generated, deduplicated by name similarity), the user confirms, and AI generates an initial set of starter notes in each planet—converting abstract categories into tangible content that the user can immediately read, edit, and expand.</li>
+</ol>
+
+<p>The cross-product of 6 identities × 8 interest categories yields 48 base configurations, each further personalized by the specific identity-interest combination and the user's optional custom inputs. The generated cosmos is explicitly marked as a starting point—"This is your initial universe. Every planet can be renamed, recategorized, recolored, or deleted. It's yours."</p>
+
+<h4>3.7.3 Visual and Interaction Design</h4>
+
+<p>The onboarding is presented full-screen with a dark gradient background and 40 randomly drifting particles, establishing the spatial-universe aesthetic from the first frame. Card selections use staggered entrance animations (0.05s interval) creating a sense of abundance. A 3-dot step progress indicator (completed = gold, current = white, pending = dim) provides orientation without feeling like a form. Skip buttons are present on every step—the user can bypass onboarding entirely and start with an empty cosmos, or complete only the identity step and skip interests. After generation, a <code>linna-onboarding-done</code> flag is persisted to prevent re-triggering.</p>
+
+<h3>3.8 3D Visualization: Data-to-Visual Mapping Specification</h3>
+
+<h4>3.8.1 Universe Overview (Layer 1)</h4>
+
+<p>The top-level view renders each galaxy category as an accretion disk structure: a disk plane of 2,000 particles with radial density distribution (dense core, sparse edges) + a central bulge of 300 particles in spherical distribution + a sprite-based luminous core (512×128 Canvas texture with outer glow) + a sprite label (category name, 512×128 Canvas). Galaxy size follows: <code>radius = 0.7 + min(total_entries, 10) × 0.16</code>. Galaxies are positioned using Fibonacci sphere distribution (golden angle spiral on sphere surface) for mathematically uniform coverage rather than clustering. Background layers (non-interactive): 2,500 star field particles, 150 distant fuzzy galaxy spots, 30 dark filament connection lines, 1,000 low-opacity dark nebula particles.</p>
+
+<h4>3.8.2 Galaxy Interior (Layer 2)</h4>
+
+<p>Each galaxy interior visualization contains: a golden core (sprite radial gradient + PointLight, intensity 1.2, distance 10), three spiral arms (2,500 particles each, simplex-noise-perturbed logarithmic spiral path: <code>angle = t × 2.8π + arm_offset + simplexNoise(t×6+1, arm+0.5) × 0.3 - 0.15</code>, <code>radius = 0.4 + t × 6.5 + simplexNoise(t×8, arm) × 0.8 - 0.5</code>), white highlight stars (density &gt; 0.55 regions), pink nebula nodes (mid-arm density clusters at t 0.2–0.7), a purple halo (800 particles, spherical distribution, 3–9 unit radius), and planet highlight spheres with sprite labels on the arms.</p>
+
+<p>The use of simplex noise perturbation rather than pure mathematical spirals is deliberate: pure logarithmic spirals appear as mathematical diagrams, while organic irregularity signals "this is a real place." This distinction operates at the subconscious level—users perceive the difference without being able to articulate why one feels alive and the other feels like a chart.</p>
+
+<h4>3.8.3 Camera State Machine</h4>
+
+<p>The camera system uses a 4-state finite state machine: <strong>overview</strong> (free orbit/zoom, controls active), <strong>flying-in</strong> (controls locked, 1.2-second camera flight to target galaxy, easeInOutCubic interpolation of position + lookAt), <strong>interior</strong> (constrained orbit near galaxy, distance clamped to [2, 12], controls re-activated), <strong>flying-out</strong> (controls locked, 1.2-second flight back to overview position). The 1.2-second flight duration is bounded by research: durations below 0.5s feel like teleportation (loss of spatial continuity), durations above 2.0s cause impatience. The 1.2s value sits at the inflection point where transition is perceived without time being wasted.</p>
+
+<h4>3.8.4 Connection Line Visualization</h4>
+
+<p>Connection lines between planets render as quadratic Bézier curves: the midpoint is displaced upward by <code>distance × 0.25</code>, creating an arch that avoids the collision problems of straight lines in 3D space. Each line carries a FlowPulse animation (a luminous point traveling along the curve, <code>phase += delta × 0.25</code>) whose color matches the connection type. Visual parameters scale with connection strength: line width = <code>0.3 + strength × 0.8</code>, opacity = <code>0.2 + strength × 0.4</code>. Progressive disclosure governs default visibility: persistent hint lines at opacity 0.08–0.15 maintain spatial skeleton awareness; full rendering activates on hover.</p>
+
+<h3>3.9 Complete Module Inventory</h3>
+
+<p>Beyond the core innovations described above, Linna Phase 1 implements twelve functional modules. Their existence is noted here for prior art coverage; detailed specifications are maintained in the project's design documentation.</p>
+
+<table>
+<tr><th>Module</th><th>Function</th><th>Key Technical Details</th></tr>
+<tr><td>F-01 Planet Management</td><td>CRUD for knowledge topics</td><td>8 categories × 8 colors, custom category input, auto entry_count</td></tr>
+<tr><td>F-02 Entry Management</td><td>CRUD for individual notes</td><td>4 source types, SHA-256 dedup, word count, favorite flag</td></tr>
+<tr><td>F-03 Connection Lines</td><td>Semantic relationships</td><td>4 types, 0–1 continuous strength, Bézier curve rendering</td></tr>
+<tr><td>F-04 Full-Text Search</td><td>Cross-planet retrieval</td><td>FTS5 + BM25 ranking, 200ms debounce, 15-result limit, keyboard nav</td></tr>
+<tr><td>F-05 AI Text Import</td><td>Auto-classified knowledge entry</td><td>AI categorization → planet matching → auto-create or append, hash dedup</td></tr>
+<tr><td>F-06 AI Chat Panel</td><td>Guardian conversation interface</td><td>SSE streaming, 30-message context window, extract-to-knowledge</td></tr>
+<tr><td>F-07 Timeline</td><td>Temporal knowledge browsing</td><td>Day/month/year granularity, server-side aggregation, source-type icons</td></tr>
+<tr><td>F-08 Tag System</td><td>Cross-planet indexing</td><td>Frequency-sorted aggregation, read-only browse view</td></tr>
+<tr><td>F-09 3D Cosmos Viz</td><td>Spatial knowledge rendering</td><td>Three.js + @react-three/fiber, custom shaders, 4-state camera FSM</td></tr>
+<tr><td>F-10 UI Component Library</td><td>Reusable interface elements</td><td>16 components, 3-layer Design Token architecture (Primitive → Semantic → Component), dark/light dual theme</td></tr>
+<tr><td>F-11 Onboarding Wizard</td><td>Identity-driven initial setup</td><td>3-step progressive flow, AI-generated initial cosmos</td></tr>
+<tr><td>F-12 Brand Loading Screen</td><td>Application launch experience</td><td>Canvas-rendered mandala compass animation, 2.8s duration, DPR-aware</td></tr>
+</table>
+
+<h3>3.10 Design Token Architecture</h3>
+
+<p>Linna's visual design is governed by a three-layer Design Token system that ensures consistency while enabling precise scoped changes:</p>
+
+<table>
+<tr><th>Layer</th><th>Scope</th><th>Examples</th><th>Change Radius</th></tr>
+<tr><td><strong>Primitive</strong></td><td>Raw values, never used directly in components</td><td>Color palette (10 hues × 10 lightness stops), type scale (11px–36px, 8 stops), spacing grid (4px base, 0–96px), radius scale (6 stops), shadow scale (5 stops)</td><td>Global—changing a primitive value cascades through all semantic and component tokens that reference it</td></tr>
+<tr><td><strong>Semantic</strong></td><td>Purpose-bound tokens used by all components</td><td>bg-page, bg-surface, text-primary, text-secondary, border-subtle, interactive-hover, status-success, galaxy-01 through galaxy-08, brand-gold</td><td>Domain-wide—changing a semantic token affects all components using that semantic category</td></tr>
+<tr><td><strong>Component</strong></td><td>Component-specific overrides</td><td>button-primary-bg, sidebar-width (224px), topbar-height (44px), modal-max-width (480px), sun-size (128px)</td><td>Single component—changing a component token affects only that specific component</td></tr>
+</table>
+
+<p>This three-layer architecture enables precise control over change radiation: a brand color update changes one primitive and cascades everywhere; a text contrast adjustment changes one semantic token and affects all text surfaces; a button size adjustment changes one component token without collateral effects. The token system supports dual-theme (dark/light) through semantic-layer overrides—each semantic token has a dark-mode value and a light-mode value, selected by a single theme preference flag.</p>
+
+<h3>11. Technology Stack</h3>
+
+<table>
+<tr><th>Layer</th><th>Technology</th><th>Selection Rationale</th></tr>
+<tr><td>Frontend Framework</td><td>React 19 + TypeScript 5 + Vite 6</td><td>Component architecture with static type checking; fast HMR development loop</td></tr>
+<tr><td>3D Rendering</td><td>Three.js + @react-three/fiber</td><td>Mature WebGL 2.0 ecosystem with React declarative binding; custom BufferGeometry with manual disposal for GPU memory management</td></tr>
+<tr><td>UI Animation</td><td>Framer Motion 11</td><td>Declarative spring physics for React component transitions; 12 named animation variants, 4 spring presets, 6 duration stops (80ms–420ms)</td></tr>
+<tr><td>3D Animation</td><td>GSAP (GreenSock)</td><td>Imperative timeline-based animation for direct Three.js object property manipulation outside React render cycle; 4-level easing hierarchy (entrance/exit/spring/ambient)</td></tr>
+<tr><td>State Management</td><td>Zustand 4</td><td>Minimal API surface with no Provider wrapper requirement; supports page-state pattern without router dependency</td></tr>
+<tr><td>Backend API</td><td>FastAPI (Python 3.12)</td><td>Async-native request handling, automatic OpenAPI schema generation, SSE streaming support</td></tr>
+<tr><td>Database</td><td>SQLite 3 (WAL + FTS5)</td><td>Zero-operations single-file deployment, write-ahead logging for concurrent access, built-in full-text search engine</td></tr>
+<tr><td>AI Integration</td><td>OpenAI-compatible API abstraction</td><td>Provider-agnostic interface supporting DeepSeek, GPT, Claude, and any API endpoint conforming to the chat completions specification</td></tr>
+</table>
+
+<hr class="page-break" />
+
 <h2>4. Design Principles</h2>
+
 <h3>4.1 Research-Grounded Principles</h3>
-<p>All design decisions are grounded in empirical HCI and cognitive science research rather than aesthetic preference:</p>
+
+<p>All design decisions are grounded in empirical HCI and cognitive science research rather than aesthetic preference or competitor imitation:</p>
+
 <ol>
-<li>
-<p><strong>Respect Human Operating Habits</strong>: No novel interaction paradigms. All operations follow established user expectations from existing tools (file managers, notes apps, search interfaces).</p>
-</li>
-<li>
-<p><strong>Efficiency, Simplicity, Durability</strong>: The design framework must scale to accommodate decades of accumulated knowledge without degradation in usability.</p>
-</li>
-<li>
-<p><strong>Cross-Platform Consistency</strong>: Desktop and mobile share identical operation flows. The only differences are input methods (mouse vs. touch).</p>
-</li>
-<li>
-<p><strong>Progressive Disclosure</strong>: Advanced features and connections are revealed on demand, not displayed by default. Following Chu &amp; Chen (2025), visual complexity scales with user engagement.</p>
-</li>
-<li>
-<p><strong>Emotional Anchoring</strong>: The spatial universe metaphor creates media attachment (Wang et al., 2025)—the user is not managing files but ruling a personal cosmos.</p>
-</li>
+<li><p><strong>Respect Human Operating Habits</strong>: No novel interaction paradigms are invented. All operations follow established user expectations from decades of GUI evolution (file managers, notes applications, search interfaces). The innovation is in <em>what</em> the system does, not <em>how</em> the user operates it. This principle is validated by the learnability findings of Li et al. (2024): 3D interfaces showed no learnability penalty compared to 2D when interaction patterns remained familiar.</p></li>
+
+<li><p><strong>Efficiency, Simplicity, Durability</strong>: The design framework must scale to accommodate decades of accumulated knowledge without degradation in usability. This means: search must remain fast regardless of database size (FTS5 indexed, response time target &lt;200ms); navigation depth must remain constant (3 layers, no deeper); visual complexity must not increase with data volume (progressive disclosure constrains visible elements).</p></li>
+
+<li><p><strong>Cross-Platform Consistency</strong>: Desktop and mobile share identical operation flows and information architecture. The only differences are input methods (mouse vs. touch) and layout adaptations (side panel vs. full-screen overlay). This ensures users transitioning between devices experience continuity rather than relearning.</p></li>
+
+<li><p><strong>Progressive Disclosure</strong>: Advanced features and connections are revealed on demand. Following Chu &amp; Chen (2025), visual complexity scales with user engagement: default views are calm and uncluttered; detail emerges through hover, click, and zoom. The connection line visibility system (hint lines at 0.08 opacity → full rendering on hover) is the canonical example.</p></li>
+
+<li><p><strong>Dual-Anchored Emotional Retention</strong>: User retention is secured through two independent mooring mechanisms (Wang et al., 2025): visual ownership of the spatial cosmos ("this is my world") and relational connection to the Guardian ("this person knows me"). Either mechanism alone provides a retention anchor; together they create a switching cost rooted in genuine attachment rather than feature lock-in.</p></li>
+
+<li><p><strong>Content-First Onboarding</strong>: New users encounter content before structure. Rather than tutorials explaining how to organize knowledge, the system generates a populated starting cosmos that the user immediately owns and reshapes. This converts the cold-start abandonment trigger (~50% per UC Berkeley iSchool 2025) into an emotional anchoring event.</p></li>
 </ol>
+
 <h3>4.2 Five Key Design Decisions</h3>
-<p>Our design review process identified five critical architectural decisions, each evaluated against published research:</p>
+
 <table>
-<thead>
-<tr>
-<th>#</th>
-<th>Decision</th>
-<th>Resolution</th>
-<th>Research Basis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Primary interface task</td>
-<td><strong>Hybrid mode</strong>: 3D cosmos = dashboard; search = efficiency path</td>
-<td>Hubenschmid et al. (2025); Li et al. (2024)</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Spatial metaphor</td>
-<td><strong>Universe retained; internal mapping restructured</strong></td>
-<td>Lee &amp; Lee (2025); Wang et al. (2025)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>First-time user experience</td>
-<td><strong>Lightweight question + AI-generated initial cosmos</strong></td>
-<td>UC Berkeley iSchool (2025); Forsey &amp; Leahy</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Alternative views</td>
-<td><strong>3D + card/list view coexistence</strong></td>
-<td>Hubenschmid et al. (2025)</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Connection line visibility</td>
-<td><strong>Under discussion</strong> (hover-highlight direction)</td>
-<td>Chu &amp; Chen (2025)</td>
-</tr>
-</tbody>
+<tr><th>#</th><th>Decision</th><th>Resolution</th><th>Research Basis</th></tr>
+<tr><td>1</td><td>Primary interface task</td><td><strong>Hybrid mode</strong>: 3D cosmos = dashboard + emotional anchor; search/list = efficiency path</td><td>Hubenschmid et al. (2025); Li et al. (2024); Sudár &amp; Csapó (2024)</td></tr>
+<tr><td>2</td><td>Spatial metaphor</td><td><strong>Universe retained; internal mapping restructured</strong> — category ≠ galaxy; flexible dynamic spatial organization</td><td>Lee &amp; Lee (2025); Wang et al. (2025)</td></tr>
+<tr><td>3</td><td>First-time user experience</td><td><strong>Identity-driven AI generation</strong>: user selects identity + interests → AI generates initial populated cosmos</td><td>UC Berkeley iSchool (2025); Forsey &amp; Leahy; Wang et al. (2025) mooring effects</td></tr>
+<tr><td>4</td><td>Alternative views</td><td><strong>3D + card/list coexistence</strong> with morphing transition animation</td><td>Hubenschmid et al. (2025) — avoid disruptive modality switching</td></tr>
+<tr><td>5</td><td>Connection line visibility</td><td><strong>Progressive disclosure</strong>: persistent hint lines (opacity 0.08–0.15) + hover-to-reveal full rendering. Resolved from "under discussion" in v1.</td><td>Chu &amp; Chen (2025) — connector cues increase cognitive load in cluttered layouts</td></tr>
 </table>
+
 <h3>4.3 Eight Design Assumptions — Critical Examination</h3>
-<p>Each assumption underlying the current implementation was systematically deconstructed and validated or revised:</p>
+
 <table>
-<thead>
-<tr>
-<th>Assumption</th>
-<th>Status</th>
-<th>Required Change</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3D &gt; 2D for main interface</td>
-<td>Partially validated</td>
-<td>Must pair with 2D efficiency path</td>
-</tr>
-<tr>
-<td>Category = Galaxy mapping</td>
-<td>Questioned</td>
-<td>Restructure to flexible dynamic mapping</td>
-</tr>
-<tr>
-<td>Users will spontaneously explore 3D</td>
-<td>Needs guidance</td>
-<td>Add clear affordances and progressive cues</td>
-</tr>
-<tr>
-<td>Spiral galaxy as visual metaphor</td>
-<td>Valid direction</td>
-<td>Specific form adjustable</td>
-</tr>
-<tr>
-<td>Connection lines alone convey relationships</td>
-<td>Needs progressive disclosure</td>
-<td>Add hint lines; hover to reveal</td>
-</tr>
-<tr>
-<td>Camera flight maintains spatial continuity</td>
-<td>Conditional</td>
-<td>Keep flights short (&lt;1.2s); add spatial anchors</td>
-</tr>
-<tr>
-<td>4-layer architecture</td>
-<td>Too deep for mobile</td>
-<td>Compress to 3 layers</td>
-</tr>
-<tr>
-<td>3-step wizard for onboarding</td>
-<td>Redesign</td>
-<td>Replace with lightweight question + AI generation</td>
-</tr>
-</tbody>
+<tr><th>Assumption</th><th>Status</th><th>Required Change</th></tr>
+<tr><td>3D &gt; 2D for main interface</td><td>Partially validated</td><td>Must pair with 2D efficiency path; 3D navigation must minimize locomotion</td></tr>
+<tr><td>Category = Galaxy mapping</td><td>Questioned and restructured</td><td>Flexible dynamic mapping; category is a tag, galaxy is a spatial container</td></tr>
+<tr><td>Users will spontaneously explore 3D</td><td>Needs guidance</td><td>Clear affordances, progressive cues, onboarding that teaches spatial exploration</td></tr>
+<tr><td>Spiral galaxy as visual metaphor</td><td>Valid direction</td><td>Specific form adjustable; organic noise perturbation essential for "real place" perception</td></tr>
+<tr><td>Connection lines alone convey relationships</td><td>Needs progressive disclosure</td><td>Two-tier hint + highlight system; strength-encoded visual parameters</td></tr>
+<tr><td>Camera flight maintains spatial continuity</td><td>Conditional</td><td>Strict 1.2s bounded duration; spatial anchor reference points during flight</td></tr>
+<tr><td>4-layer architecture</td><td>Too deep for mobile</td><td>Compressed to 3 layers; consistent across desktop and mobile</td></tr>
+<tr><td>3-step wizard for onboarding</td><td>Redesigned</td><td>Identity-driven AI generation replaces empty-state tutorials</td></tr>
 </table>
-<hr />
+
+<hr class="page-break" />
+
 <h2>5. Phased Roadmap</h2>
-<p>Linna's development follows a four-phase roadmap spanning from immediate execution to a decade-scale vision.</p>
-<h3>Phase 1: Knowledge Storage Foundation (Now – 3 months)</h3>
-<p><strong>Goal</strong>: Users can store, organize, find, and want to reopen their knowledge.</p>
+
+<h3>Phase 1: Knowledge Storage Foundation — DELIVERED</h3>
+
+<p><strong>Timeline</strong>: May–June 2026<br />
+<strong>Goal</strong>: Users can store, organize, find, and want to reopen their knowledge.</p>
+
+<p><strong>Delivered</strong>:</p>
 <ul>
-<li>Complete planet/entry CRUD operations</li>
-<li>Full-text search (FTS5)</li>
-<li>3D cosmos overview (minimal viable version)</li>
-<li>AI-powered text import and auto-categorization</li>
-<li>Tag system + timeline view</li>
-<li>Card/list view alongside 3D</li>
-<li>Desktop complete application</li>
+<li>Complete planet/entry CRUD with lifecycle state machine</li>
+<li>FTS5 full-text search with 200ms debounce and keyboard navigation</li>
+<li>3D cosmos overview with Fibonacci-sphere galaxy distribution and simplex-noise spiral arms</li>
+<li>AI-powered text import with automatic categorization and SHA-256 deduplication</li>
+<li>Tag system with frequency-sorted cross-planet aggregation</li>
+<li>Timeline view with day/month/year granularity and source-type icons</li>
+<li>Card/list view alongside 3D cosmos with morphing transition</li>
+<li>AI Chat Panel with SSE streaming, Guardian personality engine, and hybrid knowledge retrieval</li>
+<li>Identity-driven onboarding wizard with AI-generated initial cosmos</li>
+<li>Complete Design Token system with dark/light dual-theme support</li>
+<li>16-component UI library with loading skeletons and empty states</li>
+<li>Brand loading screen with Canvas-rendered mandala compass animation</li>
+<li>Feedback collection widget and keyboard shortcuts reference</li>
 </ul>
-<h3>Phase 2: Book of the Universe + AI Assistant (3–12 months)</h3>
-<p><strong>Goal</strong>: AI answers questions using the user's personal knowledge, with source attribution.</p>
+
+<p><strong>Phase 1 status</strong>: Complete. Desktop application with all six core modules functional.</p>
+
+<h3>Phase 2: Book of the Universe + Guardian Deep Integration (3–12 months)</h3>
+
+<p><strong>Goal</strong>: The Guardian answers questions using the user's personal knowledge with source attribution, becoming genuinely indispensable.</p>
 <ul>
-<li>RAG retrieval from user knowledge base</li>
-<li>Source citation in AI responses</li>
-<li>Multi-model API integration</li>
-<li>Connection line 3D visualization (progressive disclosure)</li>
-<li>AI-suggested knowledge connections</li>
+<li>Semantic vector search as primary retrieval (currently FTS5 with semantic fallback)</li>
+<li>Source citation in Guardian responses with direct links to specific entries</li>
+<li>Multi-model Guardian support (user selects their Guardian's underlying model)</li>
+<li>Connection line 3D visualization with progressive disclosure (currently implemented in Layer 2 only)</li>
+<li>Guardian-proactive knowledge connection suggestions ("I noticed these two planets might be related...")</li>
+<li>Knowledge gap detection: Guardian identifies topics the user has referenced but not yet captured</li>
+<li>Conversation-to-knowledge pipeline: Guardian proactively offers to extract insights from conversations</li>
 </ul>
+
 <h3>Phase 3: Platformization (1–3 years)</h3>
+
 <p><strong>Goal</strong>: From personal tool to extensible platform.</p>
 <ul>
-<li>Plugin system and third-party integrations</li>
-<li>Knowledge marketplace (share planet/galaxy templates)</li>
-<li>Full mobile applications (iOS + Android)</li>
-<li>Collaboration features</li>
-<li>Public API for external applications</li>
+<li>Plugin system with sandboxed third-party integrations</li>
+<li>Knowledge marketplace: share planet/galaxy templates and knowledge structures</li>
+<li>Full mobile applications (iOS + Android) with cross-device sync</li>
+<li>Collaboration features: shared planets, co-edited entries</li>
+<li>Public API for external applications to query the Book of the Universe (with user permission)</li>
+<li>Guardian SDK: third-party developers create custom Guardian personality profiles</li>
 </ul>
+
 <h3>Phase 4: Universal Carrier (3–10 years)</h3>
+
 <p><strong>Goal</strong>: An indispensable daily AI companion and comprehensive ecosystem platform.</p>
 <ul>
-<li>Life services integration (payment, scheduling, commerce)</li>
-<li>Social knowledge networking</li>
-<li>Enterprise edition (team cosmos)</li>
-<li>AR/VR interfaces</li>
-<li>Autonomous AI agent capabilities</li>
+<li>Life services integration (payment, scheduling, commerce) mediated by the Guardian</li>
+<li>Social knowledge networking: discover and follow public knowledge cosmoses</li>
+<li>Enterprise edition: team cosmoses with role-based access and shared Guardian instances</li>
+<li>AR/VR spatial knowledge interfaces leveraging the existing 3D spatial architecture</li>
+<li>Autonomous Guardian agent capabilities: proactive research, scheduled knowledge maintenance</li>
 </ul>
+
 <hr />
+
 <h2>6. Conclusion</h2>
-<p>Linna proposes an alternative paradigm for personal knowledge management: one where knowledge is not stored in folders but organized as a living cosmos, and where the AI assistant does not merely chat—it genuinely knows its user through the accumulation of personal knowledge over time.</p>
-<p>The core insight is simple but has been overlooked by the current generation of AI products: <strong>a personal AI must have personal knowledge</strong>. The Book of the Universe provides this foundation, and the 3D spatial metaphor transforms knowledge management from a chore into an experience of ownership, discovery, and emotional connection.</p>
-<p>This paper serves as a public declaration of prior art. The complete design framework, system architecture, and implementation roadmap are available in the accompanying GitHub repository.</p>
+
+<p>Linna proposes an alternative paradigm for personal knowledge management—one that addresses both the functional failure of PKM tools (knowledge abandonment) and the relational failure of AI assistants (user anonymity). The synthesis of six interconnected innovations—3D spatial organization, structured personal knowledge base, character-driven Guardian personality engine, hybrid three-source knowledge retrieval, identity-driven AI onboarding, and carrier platform architecture—creates a system that is irreducible to any single component.</p>
+
+<p>The core insight is simple but has been overlooked by the current generation of AI products: <strong>a personal AI must have personal knowledge, and it must have a personality worth returning to</strong>. The Book of the Universe provides the knowledge foundation. The Guardian Personality Engine provides the relational foundation. The 3D spatial metaphor transforms knowledge management from a chore into an experience of ownership, discovery, and emotional connection. The hybrid retrieval architecture ensures the Guardian is not limited to stale personal data but can integrate fresh information while maintaining persistent awareness of the user's intellectual trajectory.</p>
+
+<p>This paper serves as a public declaration of prior art establishing the unique combination of: (a) 3D spatial universe metaphor for personal knowledge organization with specified data-to-visual mapping functions and camera state machine; (b) structured personal knowledge base with lifecycle state machine, semantic connection types, provenance tracking, and content-addressable deduplication; (c) character-driven Guardian personality engine with three-layer behavioral architecture and scene-aware modulation; (d) hybrid three-source knowledge retrieval fusing personal knowledge, real-time web search, and universe-wide contextual awareness; (e) identity-driven AI onboarding that generates populated initial knowledge structures; and (f) carrier platform architecture with explicit four-phase evolution roadmap. Any system implementing a substantially similar combination of these architectural elements—regardless of the names assigned to individual components—is implementing the Linna architecture described herein.</p>
+
 <hr />
-<h2>References</h2>
-<ol>
-<li>
-<p>Li, X., et al. (2024). Comparative Study on 2D and 3D User Interface for Eliminating Cognitive Loads in Augmented Reality Repetitive Tasks. <em>International Journal of Human-Computer Interaction</em>, 40(23).</p>
-</li>
-<li>
-<p>Sudár, A. &amp; Csapó, B. (2024). Comparing Desktop 3D Virtual Reality with Web 2.0 Interfaces: Identifying Key Factors Behind Enhanced User Capabilities. <em>Heliyon</em>.</p>
-</li>
-<li>
-<p>Hubenschmid, S., et al. (2025). Revisiting Hybrid Input Devices for Immersive Analytics. <em>Workshop on Human Factors in Immersive Analytics</em>.</p>
-</li>
-<li>
-<p>Lee, J. &amp; Lee, S. (2025). Enhancing Recognition Memory in Virtual Memory Palaces Using Worlds-in-Miniature. <em>Applied Sciences</em>, 15(5), 2304.</p>
-</li>
-<li>
-<p>Wang, R., Ye, D., Jia, Z., &amp; Cho, D. (2025). Knowledge Sharing Platform Users' Switching Intention from the Perspective of the Push-Pull-Mooring Framework. <em>International Journal of Mobile Communications</em>, 25(3), 339-368.</p>
-</li>
-<li>
-<p>Chu, Y. &amp; Chen, W. (2025). Investigating 2D and 3D Interactive Labeling with Connector Cues for Symptom-Assisted Appointment Scheduling in mHealth. <em>HCI International 2025</em>, Springer LNCS.</p>
-</li>
-<li>
-<p>UC Berkeley School of Information. (2025). ScrollWise: A Personal Knowledge Management Tool. Product Report.</p>
-</li>
-<li>
-<p>Forsey, J. &amp; Leahy, M. Designing for Learnability: Improvement Through Layered Interfaces.</p>
-</li>
-</ol>
+
+<h2>7. Design Status (Addendum, June 2026)</h2>
+
+<p><strong>v2 Update</strong>: This version expands the paper from 3 to 6 core innovations, adding the Guardian Personality Engine (Innovation 3), Hybrid Knowledge Retrieval Architecture (Innovation 4), and Identity-Driven AI Onboarding (Innovation 5), while substantially deepening the technical specification of all previously described components. The Design Token architecture (Section 3.10) and Animation System specifications are documented for the first time.</p>
+
+<p><strong>Implementation Status (June 2026)</strong>: Phase 1 has been delivered as a complete desktop application. All six core modules (Import Panel, Timeline, AI Chat Panel with Guardian personality engine and hybrid retrieval, Search Panel with FTS5, Card List View with morphing transition, Content Editor L3 with dual read/edit modes) are functional. The 3D cosmos visualization (L0 Universe Overview + L1 Galaxy Interior) with 4-state camera system, simplex-noise spiral arm generation, and connection line rendering is operational. The Guardian Personality Engine is implemented with the full three-layer behavioral specification, scene-aware time-of-day modulation, universe awareness injection, and three-source hybrid knowledge retrieval (personal KB semantic+FTS5, multi-engine web search, universe summary context). The identity-driven onboarding wizard generates AI-populated initial cosmoses from 6 identity profiles × 8 interest categories. The three-layer Design Token system (Primitive → Semantic → Component) with dark/light dual-theme support governs the complete UI. A 16-component UI library with loading skeletons, empty states, and toast notifications provides consistent interface patterns.</p>
+
+<p><strong>Phase 2 planning</strong>: Semantic vector search as primary retrieval path, source citation in Guardian responses, Guardian-proactive knowledge connection discovery, conversation-to-knowledge extraction pipeline. See Section 5 for complete roadmap.</p>
+
 <hr />
-<h2>8. Design Status (Addendum, May 27, 2026)</h2>
-<p>As of the date of this public disclosure, the Phase 2.5 depth design for Linna has been completed. Six core functional modules have been fully specified: Import Panel, Timeline, AI Chat Panel, Search Panel, Card List View, and Content Editor (L3). The AI engine architecture has been designed with function-calling capability, multi-layered retrieval strategy, and streaming response generation. All design decisions are grounded in the research foundation described in Sections 2–4.</p>
-<hr />
+
 <h2>Prior Art Declaration</h2>
-<p><strong>Date of first public disclosure</strong>: May 27, 2026<br />
+
+<p><strong>Date of first public disclosure (v1)</strong>: May 27, 2026<br />
+<strong>Date of v2 expanded disclosure</strong>: June 2026<br />
 <strong>Repository</strong>: <a href="https://github.com/Linnaphia/linna-knowledge-cosmos">github.com/Linnaphia/linna-knowledge-cosmos</a><br />
+<strong>OSF Project</strong>: <a href="https://osf.io/aygk6">osf.io/aygk6</a><br />
 <strong>Preprint DOI</strong>: [to be assigned by OSF Preprints]<br />
 <strong>Author</strong>: Filinna<br />
 <strong>License</strong>: Apache 2.0</p>
-<p>This document, together with the accompanying GitHub repository and OSF Preprints record, establishes public prior art for the Linna Knowledge Cosmos system. Any subsequent patent applications, product launches, or commercial implementations of substantially similar systems incorporating the combination of (a) 3D spatial universe metaphor for personal knowledge organization, (b) personal knowledge-base-driven AI assistant with source attribution, and (c) carrier platform architecture with multi-model AI integration, are preceded by this disclosure.</p>
+
+<p>This document, together with the accompanying GitHub repository and OSF Preprints record (including all version history from v1 forward), establishes public prior art for the Linna Knowledge Cosmos system. Any subsequent patent applications, product launches, or commercial implementations of substantially similar systems incorporating the combination of architectural elements described in Section 1.1 (Six Core Innovations) and Section 3 (System Design) are preceded by this disclosure.</p>
+
+<p>The specific combination claimed as prior art includes: 3D spatial universe metaphor for personal knowledge with specified data-to-visual mapping functions, 4-state camera finite state machine, and simplex-noise-perturbed organic spiral generation; structured personal knowledge base with 5-stage planet lifecycle state machine, 4-type semantic connection lines with continuous strength values, SHA-256 content-addressable deduplication, and source provenance tracking; character-driven AI companion architecture with three-layer behavioral personality model (daily warmth / work precision / protective boundary), scene-aware temporal modulation, and universe-awareness injection; hybrid three-source knowledge retrieval pipeline (personal semantic+FTS5 → real-time multi-engine web search → universe summary context) with pre-generation fusion strategy; identity-driven AI onboarding system (6 profiles × 8 interests → AI-generated initial cosmos); and carrier platform architecture with explicit four-phase evolution roadmap from personal tool to universal ecosystem.</p>
+
+<hr />
+
+<h2>References</h2>
+
+<ol>
+<li><p>Li, X., et al. (2024). Comparative Study on 2D and 3D User Interface for Eliminating Cognitive Loads in Augmented Reality Repetitive Tasks. <em>International Journal of Human-Computer Interaction</em>, 40(23).</p></li>
+<li><p>Sudár, A. &amp; Csapó, B. (2024). Comparing Desktop 3D Virtual Reality with Web 2.0 Interfaces: Identifying Key Factors Behind Enhanced User Capabilities. <em>Heliyon</em>.</p></li>
+<li><p>Hubenschmid, S., et al. (2025). Revisiting Hybrid Input Devices for Immersive Analytics. <em>Workshop on Human Factors in Immersive Analytics</em>.</p></li>
+<li><p>Lee, J. &amp; Lee, S. (2025). Enhancing Recognition Memory in Virtual Memory Palaces Using Worlds-in-Miniature. <em>Applied Sciences</em>, 15(5), 2304.</p></li>
+<li><p>Wang, R., Ye, D., Jia, Z., &amp; Cho, D. (2025). Knowledge Sharing Platform Users' Switching Intention from the Perspective of the Push-Pull-Mooring Framework. <em>International Journal of Mobile Communications</em>, 25(3), 339–368.</p></li>
+<li><p>Chu, Y. &amp; Chen, W. (2025). Investigating 2D and 3D Interactive Labeling with Connector Cues for Symptom-Assisted Appointment Scheduling in mHealth. <em>HCI International 2025</em>, Springer LNCS.</p></li>
+<li><p>UC Berkeley School of Information. (2025). ScrollWise: A Personal Knowledge Management Tool. Product Report.</p></li>
+<li><p>Forsey, J. &amp; Leahy, M. Designing for Learnability: Improvement Through Layered Interfaces.</p></li>
+<li><p>Nass, C. &amp; Reeves, B. (1996). <em>The Media Equation: How People Treat Computers, Television, and New Media Like Real People and Places</em>. Cambridge University Press.</p></li>
+</ol>
+
 </body>
 </html>
