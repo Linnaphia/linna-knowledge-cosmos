@@ -316,6 +316,8 @@ Linna Phase 1 implements twelve functional modules:
 | F-10 UI Component Library | Reusable elements | 16 components, 3-layer Design Tokens, dark/light theme |
 | F-11 Onboarding Wizard | Identity-driven setup | 3-step flow, AI-generated initial cosmos |
 | F-12 Brand Loading Screen | Launch experience | Canvas mandala compass, 2.8s, DPR-aware |
+| F-13 Animation System | Cross-layer motion | Framer Motion declarative (12 variants) + GSAP imperative (4-level easing) |
+| F-14 Feedback Widget | User input collection | Categorized submission (bug/feature/experience), iteration traceability |
 
 ### 3.10 Design Token Architecture
 
@@ -341,6 +343,18 @@ This enables precise control over change radiation and supports dual-theme (dark
 | Backend | FastAPI (Python 3.12) | Async-native, SSE streaming, auto OpenAPI |
 | Database | SQLite 3 (WAL + FTS5) | Zero-ops single-file, WAL concurrency, FTS |
 | AI Integration | OpenAI-compatible abstraction | Provider-agnostic (DeepSeek, GPT, Claude, any compatible endpoint) |
+
+### 3.12 Animation System Architecture
+
+Dual-layer architecture: **Declarative Layer** (Framer Motion) handles React component transitions—4 spring presets (snappy/smooth/bouncy/gentle), 6 duration stops (80ms–420ms), 12 named animation variants. **Imperative Layer** (GSAP) handles Three.js object manipulation—4-level easing hierarchy (entrance expo.out / exit expo.in / spring elastic.out / ambient sine.inOut), Timeline-based sequencing. Integration via bridge pattern: declarative event → Zustand action → imperative animation → onComplete → declarative state update.
+
+### 3.13 Monetization & Platform Economics
+
+Tiered by AI call volume; all local operations free and unlimited: Free (¥0, 3 calls/day), Pro (¥25/mo, 50/day), Max (¥48/mo, 200/day, recommended), Team (¥99/person/mo, 200/person/day). API Quota Packs: ¥10/200, ¥28/700, ¥58/2,000 (30-day validity). Lifetime Buyout: Pro ¥688, Max ¥1,288. Hard separation between local and AI operations ensures subscription cessation never blocks data access.
+
+### 3.14 Feedback & Iteration Infrastructure
+
+Categorized feedback collection (bug report, feature request, experience feedback) integrated into application interface. Serves dual purpose: development guidance and iteration traceability for user-centered design evidence.
 
 ---
 
@@ -427,13 +441,19 @@ This enables precise control over change radiation and supports dual-theme (dark
 - Public API
 - Guardian SDK for custom personality profiles
 
-### Phase 4: Universal Carrier (3–10 years)
+### Phase 4: Universal Carrier — Complete Form (3–10 years)
 
-- Life services integration
-- Social knowledge networking
-- Enterprise edition
-- AR/VR spatial interfaces
-- Autonomous Guardian agent capabilities
+**Goal**: Indispensable daily infrastructure—AI companion, knowledge repository, life organizer, social knowledge hub, all mediated through the Guardian and grounded in the Book of the Universe.
+
+**Knowledge Layer — Complete**: Full-life knowledge graph with provenance chains and cross-domain connections. Autonomous curation (archiving, surfacing, deduplication, merger). Temporal synthesis (periodic "State of the Universe" summaries).
+
+**Guardian Layer — Fully Autonomous**: Proactive agency without user prompting. Multi-modal presence across all devices with synchronized universe awareness. Deep personalization through years of interaction.
+
+**Platform Layer — Open Ecosystem**: Third-party Guardian Skills SDK. Knowledge Marketplace with creator economy. Cross-cosmos collaboration (teams/families/communities, RBAC). Public API with user-permissioned access.
+
+**Interface Layer — Post-Screen**: Spatial computing (AR/VR cosmos, navigable by walking). Ambient awareness displays. Voice-first interaction.
+
+**Infrastructure Layer — Self-Sustaining**: Decentralized storage (user-owned backends). Model independence (Guardian migrates across LLM providers). Open standard for Book of the Universe data model.
 
 ---
 
@@ -449,7 +469,7 @@ This paper serves as a public declaration of prior art establishing the unique c
 
 ## 7. Design Status (Addendum, June 2026)
 
-**v2 Update**: This version expands the paper from 3 to 6 core innovations, adding the Guardian Personality Engine (Innovation 3), Hybrid Knowledge Retrieval Architecture (Innovation 4), and Identity-Driven AI Onboarding (Innovation 5), while substantially deepening the technical specification of all previously described components. The Design Token architecture (Section 3.10) and Animation System specifications are documented for the first time.
+**v2 Update**: This version expands the paper from 3 to 6 core innovations, adding the Guardian Personality Engine (Innovation 3), Hybrid Knowledge Retrieval Architecture (Innovation 4), and Identity-Driven AI Onboarding (Innovation 5). New sections: 1.1 (Architectural Boundaries), 3.12 (Animation System Architecture), 3.13 (Monetization Framework), 3.14 (Feedback Infrastructure), expanded Phase 4 roadmap (five-layer complete form).
 
 **Implementation Status (June 2026)**: Phase 1 has been delivered as a complete desktop application. All six core modules are functional. The Guardian Personality Engine is implemented with the full three-layer behavioral specification, scene-aware modulation, universe awareness injection, and three-source hybrid knowledge retrieval. The identity-driven onboarding wizard generates AI-populated initial cosmoses. The three-layer Design Token system with dark/light dual-theme support governs the complete UI.
 

@@ -403,6 +403,8 @@ Layer 3 — Content Reading/Editing (Immersive View)
 <tr><td>F-10 UI Component Library</td><td>Reusable interface elements</td><td>16 components, 3-layer Design Token architecture (Primitive → Semantic → Component), dark/light dual theme</td></tr>
 <tr><td>F-11 Onboarding Wizard</td><td>Identity-driven initial setup</td><td>3-step progressive flow, AI-generated initial cosmos</td></tr>
 <tr><td>F-12 Brand Loading Screen</td><td>Application launch experience</td><td>Canvas-rendered mandala compass animation, 2.8s duration, DPR-aware</td></tr>
+<tr><td>F-13 Animation System</td><td>Cross-layer motion architecture</td><td>Dual-layer: Framer Motion declarative (12 variants, 4 springs, 6 durations) + GSAP imperative (4-level easing hierarchy, Timeline sequencing)</td></tr>
+<tr><td>F-14 Feedback Widget</td><td>User input collection</td><td>Categorized submission (bug/feature/experience), local logging, iteration traceability</td></tr>
 </table>
 
 <h3>3.10 Design Token Architecture</h3>
@@ -418,7 +420,7 @@ Layer 3 — Content Reading/Editing (Immersive View)
 
 <p>This three-layer architecture enables precise control over change radiation: a brand color update changes one primitive and cascades everywhere; a text contrast adjustment changes one semantic token and affects all text surfaces; a button size adjustment changes one component token without collateral effects. The token system supports dual-theme (dark/light) through semantic-layer overrides—each semantic token has a dark-mode value and a light-mode value, selected by a single theme preference flag.</p>
 
-<h3>11. Technology Stack</h3>
+<h3>3.11 Technology Stack</h3>
 
 <table>
 <tr><th>Layer</th><th>Technology</th><th>Selection Rationale</th></tr>
@@ -431,6 +433,55 @@ Layer 3 — Content Reading/Editing (Immersive View)
 <tr><td>Database</td><td>SQLite 3 (WAL + FTS5)</td><td>Zero-operations single-file deployment, write-ahead logging for concurrent access, built-in full-text search engine</td></tr>
 <tr><td>AI Integration</td><td>OpenAI-compatible API abstraction</td><td>Provider-agnostic interface supporting DeepSeek, GPT, Claude, and any API endpoint conforming to the chat completions specification</td></tr>
 </table>
+
+<h3>3.12 Animation System Architecture</h3>
+
+<p>Linna's animation system is architected as a dual-layer framework that separates declarative UI transitions from imperative 3D object manipulation. This separation is an architectural necessity: React's declarative render cycle cannot efficiently drive per-frame Three.js object property updates, while a timeline-based imperative model cannot cleanly integrate with React's component lifecycle. The dual-layer architecture solves both problems by assigning each to its optimal paradigm.</p>
+
+<h4>3.12.1 Declarative Layer — Framer Motion</h4>
+
+<p>The declarative layer handles all React component transitions—page changes, panel slides, modal entrances, list stagger animations, hover states:</p>
+
+<table>
+<tr><th>Asset</th><th>Specification</th><th>Purpose</th></tr>
+<tr><td><strong>4 Spring Presets</strong></td><td>snappy (stiffness 420, damping 32), smooth (190/24), bouncy (380/18), gentle (120/18)</td><td>Cover the full spectrum from instant feedback (button press) to relaxed reveal (page load)</td></tr>
+<tr><td><strong>6 Duration Stops</strong></td><td>instant 80ms, micro 100ms, fast 160ms, base 220ms, slow 320ms, emphasis 420ms</td><td>Constrained palette prevents arbitrary duration choices; 80ms = haptic feedback, 220ms = standard UI, 420ms = ceremonial entrance</td></tr>
+<tr><td><strong>12 Named Variants</strong></td><td>fadeUp, fadeScale, slideRight, staggerList, staggerItem, modal, pageSlideLeft, pageSlideRight, fadeOnly, cardHover, ghostHover, toastIn</td><td>Pre-built animation patterns; every component references these by name rather than defining ad-hoc animations</td></tr>
+</table>
+
+<h4>3.12.2 Imperative Layer — GSAP</h4>
+
+<p>The imperative layer handles animations on Three.js objects—camera flights, planet hover scaling, connection line FlowPulse, galaxy rotation, particle field perturbation. These operate outside React's render cycle via direct object property mutation, driven by GSAP's Timeline sequencing engine. The 4-level easing hierarchy provides semantic rather than mathematical curve selection:</p>
+
+<table>
+<tr><th>Level</th><th>Curve</th><th>Application</th></tr>
+<tr><td><strong>Entrance</strong></td><td>expo.out</td><td>Objects arriving on screen—rapid deceleration creates "settling in" sensation</td></tr>
+<tr><td><strong>Exit</strong></td><td>expo.in</td><td>Objects leaving screen—rapid acceleration creates "launching away" sensation</td></tr>
+<tr><td><strong>Spring</strong></td><td>elastic.out(1, 0.5)</td><td>Interactive feedback—overshoot communicates responsiveness without oscillation fatigue</td></tr>
+<tr><td><strong>Ambient</strong></td><td>sine.inOut</td><td>Continuous atmospheric motion—breathing pulses, orbital drifts, star twinkle cycles</td></tr>
+</table>
+
+<h4>3.12.3 Cross-Layer Integration</h4>
+
+<p>The two layers integrate at specific bridge points. When a user clicks a galaxy card (React component, declarative layer), the click handler dispatches a camera flight (Three.js object, imperative layer) via a Zustand action. When the flight completes (GSAP onComplete callback), it updates React state to reveal the galaxy interior UI. This bridge pattern—declarative event → imperative animation → declarative state update—hides the animation system's internal complexity behind simple action dispatches that the rest of the application treats as black-box transitions.</p>
+
+<h3>3.13 Monetization &amp; Platform Economics Framework</h3>
+
+<p>Linna's monetization architecture is part of the platform design from inception, serving both sustainability and platform-signaling functions. All local operations (CRUD, search, visualization) remain free and unlimited; only AI calls consume quota:</p>
+
+<table>
+<tr><th>Tier</th><th>Price</th><th>AI Calls/Day</th><th>Target User</th></tr>
+<tr><td><strong>Free</strong></td><td>¥0</td><td>3</td><td>Evaluation and light personal use</td></tr>
+<tr><td><strong>Pro</strong></td><td>¥25/month</td><td>50</td><td>Active knowledge workers</td></tr>
+<tr><td><strong>Max</strong></td><td>¥48/month</td><td>200</td><td>Heavy AI users (recommended tier)</td></tr>
+<tr><td><strong>Team</strong></td><td>¥99/person/month</td><td>200/person</td><td>Small teams with shared cosmos</td></tr>
+</table>
+
+<p><strong>API Quota Packs</strong> (supplementary, 30-day validity): ¥10/200 calls, ¥28/700 calls, ¥58/2,000 calls. <strong>Lifetime Buyout</strong>: Pro ¥688, Max ¥1,288—one-time payment for permanent tier access. The architecture enforces a hard separation between local and AI operations: a user who stops paying retains full access to all data and all local features—the Book of the Universe is never held hostage to a subscription.</p>
+
+<h3>3.14 Feedback &amp; Iteration Infrastructure</h3>
+
+<p>Linna includes a structured feedback collection mechanism integrated into the application interface. Users submit categorized feedback (bug report, feature request, experience feedback) with optional context capture. This infrastructure serves the dual purpose of guiding development priorities and establishing a paper trail of iterative design decisions—each design change traceable to specific user input, providing evidence of genuine user-centered design methodology.</p>
 
 <hr class="page-break" />
 
@@ -501,8 +552,10 @@ Layer 3 — Content Reading/Editing (Immersive View)
 <li>Identity-driven onboarding wizard with AI-generated initial cosmos</li>
 <li>Complete Design Token system with dark/light dual-theme support</li>
 <li>16-component UI library with loading skeletons and empty states</li>
+<li>Dual-layer animation system (Framer Motion declarative + GSAP imperative)</li>
 <li>Brand loading screen with Canvas-rendered mandala compass animation</li>
 <li>Feedback collection widget and keyboard shortcuts reference</li>
+<li>Monetization framework (4 tiers + quota packs + lifetime buyout), frontend-ready</li>
 </ul>
 
 <p><strong>Phase 1 status</strong>: Complete. Desktop application with all six core modules functional.</p>
@@ -532,15 +585,44 @@ Layer 3 — Content Reading/Editing (Immersive View)
 <li>Guardian SDK: third-party developers create custom Guardian personality profiles</li>
 </ul>
 
-<h3>Phase 4: Universal Carrier (3–10 years)</h3>
+<h3>Phase 4: Universal Carrier — Complete Form (3–10 years)</h3>
 
-<p><strong>Goal</strong>: An indispensable daily AI companion and comprehensive ecosystem platform.</p>
+<p><strong>Goal</strong>: Linna becomes an indispensable daily infrastructure—the user's AI companion, knowledge repository, life organizer, and social knowledge hub, all mediated through the Guardian and grounded in the Book of the Universe.</p>
+
+<h4>4.1 Knowledge Layer — Complete</h4>
 <ul>
-<li>Life services integration (payment, scheduling, commerce) mediated by the Guardian</li>
-<li>Social knowledge networking: discover and follow public knowledge cosmoses</li>
-<li>Enterprise edition: team cosmoses with role-based access and shared Guardian instances</li>
-<li>AR/VR spatial knowledge interfaces leveraging the existing 3D spatial architecture</li>
-<li>Autonomous Guardian agent capabilities: proactive research, scheduled knowledge maintenance</li>
+<li><strong>Full-life knowledge graph</strong>: Every piece of information the user has ever chosen to preserve—from academic research to grocery lists—resides in a single structured cosmos with complete provenance chains, version histories, and cross-domain connection lines automatically discovered by the Guardian.</li>
+<li><strong>Autonomous knowledge curation</strong>: The Guardian proactively maintains the cosmos—archiving stale planets, surfacing neglected connections, detecting duplicate or contradictory entries, suggesting planet mergers when semantic overlap exceeds threshold.</li>
+<li><strong>Temporal knowledge synthesis</strong>: The Guardian generates periodic "State of the Universe" summaries—what you've learned this month, which domains are growing fastest, what knowledge gaps are emerging relative to your stated goals.</li>
+</ul>
+
+<h4>4.2 Guardian Layer — Fully Autonomous Companion</h4>
+<ul>
+<li><strong>Proactive agency</strong>: The Guardian initiates actions without user prompting—scheduling knowledge review sessions when it detects content decay, pre-researching topics before the user asks, drafting summaries of relevant external content it discovers through continuous background search.</li>
+<li><strong>Multi-modal presence</strong>: The Guardian exists across all user devices and contexts—desktop, mobile, wearable, AR/VR—with consistent personality continuity and synchronized universe awareness across all touchpoints.</li>
+<li><strong>Deep personalization</strong>: After years of interaction, the Guardian's behavioral model has tuned to the user's communication patterns, emotional rhythms, intellectual style, and decision-making preferences. The user does not configure the Guardian; the Guardian has learned the user.</li>
+</ul>
+
+<h4>4.3 Platform Layer — Open Ecosystem</h4>
+<ul>
+<li><strong>Third-party Guardian Skills</strong>: Developers create specialized Guardian capabilities (financial analysis, health tracking, legal research) that integrate with the core personality engine through a sandboxed SDK. The Guardian routes queries to the appropriate skill while maintaining a unified personality and conversation flow.</li>
+<li><strong>Knowledge Marketplace</strong>: Users share planet templates, galaxy structures, and knowledge organization patterns. A creator economy emerges around knowledge architecture design—"this is how I organized my machine learning knowledge over 3 years, you can start with this structure."</li>
+<li><strong>Cross-cosmos collaboration</strong>: Teams, families, and communities maintain shared cosmoses with role-based access controls. A research lab's shared cosmos contains the collective knowledge of all members, with the Guardian able to distinguish between "what our team knows" and "what I personally know."</li>
+<li><strong>Public API</strong>: External applications query the Book of the Universe with user-permissioned access tokens. A reading app suggests books based on knowledge gaps in the user's cosmos. A conference recommendation engine matches sessions to the user's active learning domains.</li>
+</ul>
+
+<h4>4.4 Interface Layer — Post-Screen Interaction</h4>
+<ul>
+<li><strong>Spatial computing</strong>: The 3D cosmos—designed from Phase 1 as a spatial data structure, not a visual skin—ports natively to AR/VR environments. In AR, the user's knowledge galaxies float in their physical room, navigable by walking around them. The Guardian appears as a persistent presence anchored in the user's physical space.</li>
+<li><strong>Ambient awareness displays</strong>: The cosmos visualizes on peripheral displays—a wall panel showing the user's knowledge growth in real time, a mobile widget displaying the day's knowledge activity, a watch complication showing the Guardian's current awareness state.</li>
+<li><strong>Voice-first interaction</strong>: The Guardian is accessible through continuous voice interface, with the 3D cosmos serving as a visual reference that the user can consult when needed but is not required to navigate for daily use.</li>
+</ul>
+
+<h4>4.5 Infrastructure Layer — Self-Sustaining</h4>
+<ul>
+<li><strong>Decentralized knowledge storage</strong>: The Book of the Universe supports user-owned storage backends—local, self-hosted, or encrypted cloud—with the Guardian operating as a client-side agent that runs wherever the user's data lives, not as a cloud service that requires data centralization.</li>
+<li><strong>Model independence</strong>: The Guardian personality engine and knowledge retrieval architecture are fully decoupled from any specific LLM provider. As models evolve, the Guardian migrates to newer, more capable backends while preserving its personality continuity, relationship history, and knowledge of the user.</li>
+<li><strong>Interoperability standards</strong>: The Book of the Universe data model (Planets → Entries → Connection Lines with lifecycle states, semantic types, and provenance) is published as an open standard, enabling knowledge portability across any compliant system.</li>
 </ul>
 
 <hr />
@@ -557,9 +639,9 @@ Layer 3 — Content Reading/Editing (Immersive View)
 
 <h2>7. Design Status (Addendum, June 2026)</h2>
 
-<p><strong>v2 Update</strong>: This version expands the paper from 3 to 6 core innovations, adding the Guardian Personality Engine (Innovation 3), Hybrid Knowledge Retrieval Architecture (Innovation 4), and Identity-Driven AI Onboarding (Innovation 5), while substantially deepening the technical specification of all previously described components. The Design Token architecture (Section 3.10) and Animation System specifications are documented for the first time.</p>
+<p><strong>v2 Update</strong>: This version expands the paper from 3 to 6 core innovations, adding the Guardian Personality Engine (Innovation 3), Hybrid Knowledge Retrieval Architecture (Innovation 4), and Identity-Driven AI Onboarding (Innovation 5), while substantially deepening the technical specification of all previously described components. New sections added in this version: Section 1.1 (Architectural Boundaries—distinguishing Linna from four categories of superficially similar systems), Section 3.12 (Animation System Architecture—dual-layer declarative/imperative framework), Section 3.13 (Monetization &amp; Platform Economics Framework), Section 3.14 (Feedback &amp; Iteration Infrastructure), and an expanded Phase 4 roadmap describing the five-layer complete form of the platform.</p>
 
-<p><strong>Implementation Status (June 2026)</strong>: Phase 1 has been delivered as a complete desktop application. All six core modules (Import Panel, Timeline, AI Chat Panel with Guardian personality engine and hybrid retrieval, Search Panel with FTS5, Card List View with morphing transition, Content Editor L3 with dual read/edit modes) are functional. The 3D cosmos visualization (L0 Universe Overview + L1 Galaxy Interior) with 4-state camera system, simplex-noise spiral arm generation, and connection line rendering is operational. The Guardian Personality Engine is implemented with the full three-layer behavioral specification, scene-aware time-of-day modulation, universe awareness injection, and three-source hybrid knowledge retrieval (personal KB semantic+FTS5, multi-engine web search, universe summary context). The identity-driven onboarding wizard generates AI-populated initial cosmoses from 6 identity profiles × 8 interest categories. The three-layer Design Token system (Primitive → Semantic → Component) with dark/light dual-theme support governs the complete UI. A 16-component UI library with loading skeletons, empty states, and toast notifications provides consistent interface patterns.</p>
+<p><strong>Implementation Status (June 2026)</strong>: Phase 1 has been delivered as a complete desktop application. All six core modules (Import Panel, Timeline, AI Chat Panel with Guardian personality engine and hybrid retrieval, Search Panel with FTS5, Card List View with morphing transition, Content Editor L3 with dual read/edit modes) are functional. The 3D cosmos visualization (L0 Universe Overview + L1 Galaxy Interior) with 4-state camera system, simplex-noise spiral arm generation, and connection line rendering is operational. The Guardian Personality Engine is implemented with the full three-layer behavioral specification, scene-aware time-of-day modulation, universe awareness injection, and three-source hybrid knowledge retrieval (personal KB semantic+FTS5, multi-engine web search, universe summary context). The identity-driven onboarding wizard generates AI-populated initial cosmoses from 6 identity profiles × 8 interest categories. The three-layer Design Token system (Primitive → Semantic → Component) with dark/light dual-theme support governs the complete UI. The dual-layer animation system (Framer Motion declarative + GSAP imperative) with 12 named variants, 4 spring presets, and 4-level easing hierarchy is operational across all components. The monetization framework (4 tiers + quota packs + lifetime buyout) is frontend-ready. A 16-component UI library with loading skeletons, empty states, toast notifications, and feedback collection widget provides consistent interface patterns.</p>
 
 <p><strong>Phase 2 planning</strong>: Semantic vector search as primary retrieval path, source citation in Guardian responses, Guardian-proactive knowledge connection discovery, conversation-to-knowledge extraction pipeline. See Section 5 for complete roadmap.</p>
 
