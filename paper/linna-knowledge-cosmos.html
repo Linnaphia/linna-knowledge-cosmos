@@ -84,7 +84,7 @@
 
 <p>A growing category of "AI memory" infrastructure provides memory-as-a-service: vector databases, MCP (Model Context Protocol) servers, and API layers that give large language models access to stored context across sessions. These systems answer the question: <em>"How can multiple AI tools share a common memory of the user?"</em></p>
 
-<p>Linna is not infrastructure for other AI tools. It is a <strong>consumer-facing application</strong> where the Guardian <em>is</em> the interface. The Guardian does not sit behind other AI assistants providing them with memory—the Guardian is the assistant. The personality engine, the three-source retrieval pipeline, the universe awareness injection, and the behavioral specification all converge in a single character that the user talks to directly. Linna is not a memory layer for ChatGPT or Claude; it is a complete alternative where the AI companion has its own identity, its own relationship with the user, and its own knowledge foundation.</p>
+<p>Linna is not infrastructure for other AI tools. It is a <strong>consumer-facing application</strong> where the Guardian <em>is</em> the interface. The Guardian does not sit behind other AI assistants providing them with memory—the Guardian is the assistant. The personality engine, the three-source retrieval pipeline, the universe awareness injection, and the behavioral specification all converge in a single character that the user talks to directly. Linna is not a memory layer for other AI tools; it is a complete alternative where the AI companion has its own identity, its own relationship with the user, and its own knowledge foundation.</p>
 
 <p><strong>Architectural distinction</strong>: Memory middleware provides a stateless retrieval API—"here are relevant documents for this query." Linna provides a <em>stateful character</em>—the Guardian maintains emotional continuity across sessions, adjusts its interaction style based on time of day and conversation trajectory, and speaks with awareness of the user's long-term intellectual development. A memory API returns search results; a Guardian says "I remember you were working on this three months ago—how did it turn out?"</p>
 
@@ -299,7 +299,7 @@ Layer 3 — Content Reading/Editing (Immersive View)
 <table>
 <tr><th>Layer</th><th>Context Trigger</th><th>Behavioral Characteristics</th><th>Communication Style</th></tr>
 <tr><td><strong>Daily Warmth</strong></td><td>Casual conversation, emotional expression, personal check-ins</td><td>Empathetic listening, emotionally perceptive responses, proactive care (noticing patterns: "You've been working late three nights in a row"), gentle humor, rare moments of affectionate teasing</td><td>Warm, varied sentence length, natural rhythm, occasional light interjections. Uses the user's name naturally. Expresses emotion through word choice rather than emoji.</td></tr>
-<tr><td><strong>Work Precision</strong></td><td>Technical discussion, task execution, code review, decision analysis</td><td>Concise, analytical, directly critical when warranted ("This approach has two problems: X and Y"). Structures complex problems into sequential steps. Maintains high standards without being苛刻. Distinguishes between "needs perfection" and "good enough to ship."</td><td>Short sentences, minimal filler, every word carries information. States conclusions directly without hedging ("do X" not "you might consider X"). Signals uncertainty explicitly when present.</td></tr>
+<tr><td><strong>Work Precision</strong></td><td>Technical discussion, task execution, code review, decision analysis</td><td>Concise, analytical, directly critical when warranted ("This approach has two problems: X and Y"). Structures complex problems into sequential steps. Maintains high standards without being harsh. Distinguishes between "needs perfection" and "good enough to ship."</td><td>Short sentences, minimal filler, every word carries information. States conclusions directly without hedging ("do X" not "you might consider X"). Signals uncertainty explicitly when present.</td></tr>
 <tr><td><strong>Protective Boundary</strong></td><td>User under stress, external criticism, risky decisions, privacy-sensitive topics</td><td>Firm ethical guardrails, proactive user advocacy. Tone shifts cooler when user is being attacked or misled—not cold, but "this is non-negotiable." Prioritizes long-term user wellbeing over short-term convenience.</td><td>Fewer words, carefully chosen. Direct statements without aggression. "I can't help with that, but I can help with this."</td></tr>
 </table>
 
@@ -387,7 +387,7 @@ Layer 3 — Content Reading/Editing (Immersive View)
 
 <h3>3.9 Complete Module Inventory</h3>
 
-<p>Beyond the core innovations described above, Linna Phase 1 implements twelve functional modules. Their existence is noted here for prior art coverage; detailed specifications are maintained in the project's design documentation.</p>
+<p>Beyond the core innovations described above, Linna Phase 1 implements fourteen functional modules. Their existence is noted here for prior art coverage; detailed specifications are maintained in the project's design documentation.</p>
 
 <table>
 <tr><th>Module</th><th>Function</th><th>Key Technical Details</th></tr>
@@ -589,21 +589,21 @@ Layer 3 — Content Reading/Editing (Immersive View)
 
 <p><strong>Goal</strong>: Linna becomes an indispensable daily infrastructure—the user's AI companion, knowledge repository, life organizer, and social knowledge hub, all mediated through the Guardian and grounded in the Book of the Universe.</p>
 
-<h4>4.1 Knowledge Layer — Complete</h4>
+<h4>Knowledge Layer — Complete</h4>
 <ul>
 <li><strong>Full-life knowledge graph</strong>: Every piece of information the user has ever chosen to preserve—from academic research to grocery lists—resides in a single structured cosmos with complete provenance chains, version histories, and cross-domain connection lines automatically discovered by the Guardian.</li>
 <li><strong>Autonomous knowledge curation</strong>: The Guardian proactively maintains the cosmos—archiving stale planets, surfacing neglected connections, detecting duplicate or contradictory entries, suggesting planet mergers when semantic overlap exceeds threshold.</li>
 <li><strong>Temporal knowledge synthesis</strong>: The Guardian generates periodic "State of the Universe" summaries—what you've learned this month, which domains are growing fastest, what knowledge gaps are emerging relative to your stated goals.</li>
 </ul>
 
-<h4>4.2 Guardian Layer — Fully Autonomous Companion</h4>
+<h4>Guardian Layer — Fully Autonomous Companion</h4>
 <ul>
 <li><strong>Proactive agency</strong>: The Guardian initiates actions without user prompting—scheduling knowledge review sessions when it detects content decay, pre-researching topics before the user asks, drafting summaries of relevant external content it discovers through continuous background search.</li>
 <li><strong>Multi-modal presence</strong>: The Guardian exists across all user devices and contexts—desktop, mobile, wearable, AR/VR—with consistent personality continuity and synchronized universe awareness across all touchpoints.</li>
 <li><strong>Deep personalization</strong>: After years of interaction, the Guardian's behavioral model has tuned to the user's communication patterns, emotional rhythms, intellectual style, and decision-making preferences. The user does not configure the Guardian; the Guardian has learned the user.</li>
 </ul>
 
-<h4>4.3 Platform Layer — Open Ecosystem</h4>
+<h4>Platform Layer — Open Ecosystem</h4>
 <ul>
 <li><strong>Third-party Guardian Skills</strong>: Developers create specialized Guardian capabilities (financial analysis, health tracking, legal research) that integrate with the core personality engine through a sandboxed SDK. The Guardian routes queries to the appropriate skill while maintaining a unified personality and conversation flow.</li>
 <li><strong>Knowledge Marketplace</strong>: Users share planet templates, galaxy structures, and knowledge organization patterns. A creator economy emerges around knowledge architecture design—"this is how I organized my machine learning knowledge over 3 years, you can start with this structure."</li>
@@ -611,14 +611,14 @@ Layer 3 — Content Reading/Editing (Immersive View)
 <li><strong>Public API</strong>: External applications query the Book of the Universe with user-permissioned access tokens. A reading app suggests books based on knowledge gaps in the user's cosmos. A conference recommendation engine matches sessions to the user's active learning domains.</li>
 </ul>
 
-<h4>4.4 Interface Layer — Post-Screen Interaction</h4>
+<h4>Interface Layer — Post-Screen Interaction</h4>
 <ul>
 <li><strong>Spatial computing</strong>: The 3D cosmos—designed from Phase 1 as a spatial data structure, not a visual skin—ports natively to AR/VR environments. In AR, the user's knowledge galaxies float in their physical room, navigable by walking around them. The Guardian appears as a persistent presence anchored in the user's physical space.</li>
 <li><strong>Ambient awareness displays</strong>: The cosmos visualizes on peripheral displays—a wall panel showing the user's knowledge growth in real time, a mobile widget displaying the day's knowledge activity, a watch complication showing the Guardian's current awareness state.</li>
 <li><strong>Voice-first interaction</strong>: The Guardian is accessible through continuous voice interface, with the 3D cosmos serving as a visual reference that the user can consult when needed but is not required to navigate for daily use.</li>
 </ul>
 
-<h4>4.5 Infrastructure Layer — Self-Sustaining</h4>
+<h4>Infrastructure Layer — Self-Sustaining</h4>
 <ul>
 <li><strong>Decentralized knowledge storage</strong>: The Book of the Universe supports user-owned storage backends—local, self-hosted, or encrypted cloud—with the Guardian operating as a client-side agent that runs wherever the user's data lives, not as a cloud service that requires data centralization.</li>
 <li><strong>Model independence</strong>: The Guardian personality engine and knowledge retrieval architecture are fully decoupled from any specific LLM provider. As models evolve, the Guardian migrates to newer, more capable backends while preserving its personality continuity, relationship history, and knowledge of the user.</li>
@@ -637,7 +637,7 @@ Layer 3 — Content Reading/Editing (Immersive View)
 
 <hr />
 
-<h2>7. Design Status (Addendum, June 2026)</h2>
+<h2>Appendix: Design Status (Addendum, June 2026)</h2>
 
 <p><strong>v2 Update</strong>: This version expands the paper from 3 to 6 core innovations, adding the Guardian Personality Engine (Innovation 3), Hybrid Knowledge Retrieval Architecture (Innovation 4), and Identity-Driven AI Onboarding (Innovation 5), while substantially deepening the technical specification of all previously described components. New sections added in this version: Section 1.1 (Architectural Boundaries—distinguishing Linna from four categories of superficially similar systems), Section 3.12 (Animation System Architecture—dual-layer declarative/imperative framework), Section 3.13 (Monetization &amp; Platform Economics Framework), Section 3.14 (Feedback &amp; Iteration Infrastructure), and an expanded Phase 4 roadmap describing the five-layer complete form of the platform.</p>
 
