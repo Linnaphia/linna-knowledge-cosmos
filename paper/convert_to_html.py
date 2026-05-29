@@ -2,8 +2,8 @@
 import markdown
 import os
 
-paper_md = r"I:\CLAUDE\output\linna-knowledge-cosmos\paper\linna-knowledge-cosmos.pdf.md"
-output_html = r"I:\CLAUDE\output\linna-knowledge-cosmos\paper\linna-knowledge-cosmos.html"
+paper_md = r"I:\CLAUDE\Asuna\linna-knowledge-cosmos\paper\linna-knowledge-cosmos.pdf.md"
+output_html = r"I:\CLAUDE\Asuna\linna-knowledge-cosmos\paper\linna-knowledge-cosmos.html"
 
 with open(paper_md, "r", encoding="utf-8") as f:
     md_content = f.read()

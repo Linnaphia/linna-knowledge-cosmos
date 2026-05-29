@@ -93,12 +93,12 @@ Global Paths (always available, every page):
 
 ## Roadmap
 
-| Phase | Timeline | Goal |
-|-------|----------|------|
-| **1. Foundation** | May–June 2026 ✅ | Store, organize, find. Users *want* to come back. |
-| **2. Book of the Universe** | 3–12 months | AI answers from personal knowledge with source citations |
-| **3. Platform** | 1–3 years | Plugins, mobile apps, knowledge marketplace |
-| **4. Carrier** | 3–10 years | Full ecosystem — life services, knowledge sharing, AI agents |
+| Phase | Timeline | Goal | Key Deliverables |
+|-------|----------|------|------|
+| **1. Foundation** | May–June 2026 ✅ | Store, organize, find. Users *want* to come back. | Planet/Entry CRUD · FTS5 full-text search · 3D cosmos overview · AI chat panel · Guardian personality engine · Identity-driven onboarding · Browser extension · Dual-theme design system |
+| **2. Book of the Universe** | 3–12 months | AI answers from personal knowledge with source citations | World Tree 3D timeline · Semantic vector search · AI response source attribution · Connection line 3D visualization · Knowledge gap detection · Conversation-to-knowledge extraction · Mobile PWA |
+| **3. Platform** | 1–3 years | From personal tool to extensible platform | iOS + Android native apps · Plugin system · Knowledge marketplace · Collaboration · Voice interaction · Public API |
+| **4. Carrier** | 3–10 years | Indispensable daily AI infrastructure | Life services integration · Knowledge social network · Enterprise edition · AR/VR spatial interface · Autonomous AI agents |
 
 ---
 
