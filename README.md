@@ -1,66 +1,149 @@
-# Linna · 知识链星球
+# Linna · Knowledge Cosmos
 
-> 将 AI 对话、笔记、思考自动沉淀为 3D 星球宇宙。星球之间通过知识链相连，随时间动态生长。
+> **The Book of the Universe** — A personal knowledge cosmos where AI truly knows you.
 
-<!-- SCREENSHOT: 放一张主界面截图 here -->
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![OSF](https://img.shields.io/badge/OSF-Registration-green.svg)](https://osf.io/aygk6)
+[![Phase](https://img.shields.io/badge/phase-Phase%201%20Delivered-brightgreen.svg)]()
 
-## 功能
+---
 
-- **AI 智能对话** — 基于 RAG 架构的知识库问答，用自然语言检索和关联个人知识
-- **3D 星球可视化** — 知识节点以星座形式展示在三维宇宙中，支持缩放、筛选、关联跳转
-- **时间线浏览** — 按时间轴展示知识积累过程，支持按分类和时间范围筛选
-- **多格式导入** — 支持 Markdown、PDF、网页等多源内容导入，自动提取结构化信息
-- **知识图谱** — 自动检测知识节点之间的关联，形成网状知识结构
-- **暗色主题** — 默认暗色视觉，支持亮色切换
+## The Problem
 
-<!-- SCREENSHOT: 放一张3D星球截图 here -->
+Every AI assistant you use today suffers from the same flaw: **it doesn't remember you**.
 
-## 技术栈
+Today's AI assistants are brilliant. But every conversation starts from zero. They don't know what you've learned, what you care about, or what you've previously discussed. The AI that is supposed to be *your* assistant has no memory of *you*.
 
-| 层 | 技术 |
-|----|------|
-| 前端 | React 18 + TypeScript + Vite |
-| 3D 可视化 | Three.js (react-three-fiber) |
-| 样式 | Tailwind CSS + Framer Motion |
-| 状态管理 | Zustand |
-| 后端 | Python + FastAPI |
-| 数据存储 | SQLite (WAL + FTS5) |
-| AI | RAG 检索增强生成 |
+Meanwhile, ~50% of everything you save is never reopened (UC Berkeley iSchool, 2025). Your knowledge is scattered across notes, bookmarks, chat histories, and files — stored but not living.
 
-## 快速开始
+## The Solution
 
-```bash
-# 克隆仓库
-git clone https://github.com/Linnaphia/linna-knowledge-cosmos.git
-cd linna-knowledge-cosmos
+**Linna** combines six innovations that have never been combined before:
 
-# 安装前端依赖
-cd packages/web
-npm install
-npm run dev
+### 1. A 3D Spatial Universe
+Your knowledge isn't a folder tree. It's a cosmos. Each topic is a **planet**. Related topics form **galaxies**. Knowledge connections are glowing **constellation lines**. You are the creator and ruler of your personal universe.
 
-# 启动后端（需要 Python 3.12+）
-cd ../api
-pip install -r requirements.txt
-python -m cosmos_api.main
+> *Research basis*: 3D spatial interfaces reduce cognitive load (Li et al., 2024). Spatial memory organization improves retention by 14+ days (Lee & Lee, 2025).
+
+### 2. The Book of the Universe
+A personal knowledge base that grows with you. Every idea, note, and insight you save becomes part of a structured, searchable, living knowledge system — not a forgotten bookmark.
+
+### 3. An AI That Knows You
+The AI assistant doesn't search the internet for answers. It searches **your** Book of the Universe. Every answer comes with a source: "Based on your March 2026 note on React performance..."
+
+> This is not a chatbot. This is *your* AI, built on *your* knowledge.
+
+### 4. Character-Driven AI Companion
+The AI is not a generic assistant. It has a personality that adapts to context — warm in daily conversation, precise during work, protective when needed. The personality specification is model-agnostic: defined as infrastructure, versioned and improved independently of the underlying LLM.
+
+### 5. Hybrid Knowledge Retrieval
+Three knowledge sources fused before every response: personal knowledge base (semantic search + full-text fallback), real-time web search (multi-engine), and universe-wide contextual awareness. The system ensures it already knows what it needs before it speaks.
+
+### 6. Identity-Driven AI Onboarding
+No empty canvas. New users describe who they are and what they care about. The system generates a populated initial cosmos with real content. Start with knowledge, not with structure.
+
+---
+
+## Core Design Principles
+
+1. **Respect human habits** — No novel interaction paradigms. Operations follow established user expectations.
+2. **Efficient, simple, durable** — Designed to scale across decades of accumulated knowledge.
+3. **Cross-platform consistent** — Desktop and mobile share identical operation flows.
+4. **Progressive** — Build indispensable core features first. Expand gradually.
+5. **Zero-barrier access** — Every core operation works for users of any age and background.
+6. **AI differentiation first** — Every AI feature must be grounded in the user's Book of the Universe with source attribution.
+
+---
+
+## Architecture
+
+```
+Layer 1 — Universe Overview (3D Cosmos)
+    │  Navigable starfield. See all your knowledge at a glance.
+    │  Click a planet → Layer 2
+    │
+Layer 2 — Planet Directory (Structured List)
+    │  Title + summary + timestamp + tags.
+    │  Click an entry → Layer 3
+    │
+Layer 3 — Content Reading/Editing
+    │  Full text with table of contents.
+    │  Edit, tag, connect.
+
+Global Paths (always available, every page):
+    Search: Ctrl+K (desktop) / top bar (mobile)
+    AI Assistant: bottom-right orb (desktop) / FAB (mobile)
 ```
 
-## 项目结构
+---
 
-```
-packages/
-├── web/          # 前端应用 (React + TypeScript)
-├── api/          # 后端服务 (FastAPI)
-├── core/         # 数据模型 + 图谱操作
-├── extractor/    # 知识提取引擎 (Python)
-├── cli/          # 命令行工具 (Click)
-└── viz/          # 3D 可视化组件
-```
+## Technology Stack
 
-## 开源协议
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 19 · TypeScript 5 · Vite 6 |
+| 3D | Three.js · @react-three/fiber · GSAP |
+| UI Animation | Framer Motion 11 |
+| State | Zustand 4 |
+| Backend | FastAPI (Python) |
+| Database | SQLite (WAL + FTS5) |
+| AI | DeepSeek · GPT · Claude · OpenAI-compatible |
 
-MIT License
+---
 
-## 作者
+## Roadmap
 
-Filinna — [GitHub](https://github.com/Linnaphia)
+| Phase | Goal | Status |
+|-------|------|--------|
+| **1. Foundation** | Store, organize, find. Users *want* to come back. | ✅ Delivered |
+| **2. Intelligence** | AI answers from personal knowledge with source citations | In progress |
+| **3. Platform** | From personal tool to extensible platform | Planned |
+| **4. Ecosystem** | Indispensable daily AI infrastructure | Long-term vision |
+
+---
+
+## Prior Art & Intellectual Property
+
+This repository, the [OSF Project](https://osf.io/aygk6), and the MetaArXiv preprint (DOI pending) serve as **public prior art declaration** for the Linna Knowledge Cosmos system.
+
+- **Date of first public disclosure**: May 27, 2026
+- **Author**: Filinna
+- **License**: Apache 2.0
+
+---
+
+## Documentation
+
+- [Design Framework & Vision (English)](docs/design-framework.md)
+- [设计框架与愿景（中文）](docs/design-framework_CN.md)
+- [Academic Paper (Preprint)](paper/linna-knowledge-cosmos.pdf.md)
+- [Full Research References](docs/research-references.md)
+
+---
+
+## Contact
+
+- **Creator**: Filinna
+- **Domain**: [filinna.top](https://filinna.top)
+- **OSF Registration**: [osf.io/aygk6](https://osf.io/aygk6) — May 27, 2026 (DOI pending)
+
+---
+
+## Core Modules
+
+Phase 1 delivered with 14 functional modules. Core modules:
+
+- **Import Panel** — Unified entry for external knowledge. Drag-and-drop, batch folder import, AI-powered classification.
+- **Timeline** — Global vertical timeline. Browse knowledge across all planets by day/month/year.
+- **AI Chat Panel** — Right-side slide-out panel. AI searches your Book of the Universe, not the internet.
+- **Search** — Ctrl+K global search. Results grouped by planet, keyboard-navigable. AI steps in when no results are found.
+- **Card List** — Alternative planet view. Compact rows with sort, pin, and a morphing transition from 3D cosmos to cards.
+- **Editor (L3)** — Read/Edit dual mode. Immersive reading by default, toolbar slides up when editing.
+
+## Current Status
+
+**June 2026**: Phase 1 delivered — complete desktop application. All 14 functional modules operational including character-driven AI companion, hybrid knowledge retrieval, 3D cosmos visualization, identity-driven onboarding, dual-theme design system, and dual-layer animation framework. v2 academic paper submitted to MetaArXiv (DOI pending).
+
+---
+
+*"Your knowledge is not a folder. It's a universe."*
