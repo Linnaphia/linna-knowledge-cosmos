@@ -104,7 +104,7 @@ Global Paths (always available, every page):
 
 ## Prior Art & Intellectual Property
 
-This repository, the [OSF Project](https://osf.io/aygk6), and the MetaArXiv preprint (DOI pending) serve as **public prior art declaration** for the Linna Knowledge Cosmos system.
+This repository, the [OSF Project](https://osf.io/aygk6), and the [OSF Registration](https://osf.io/kf5av) serve as **public prior art declaration** for the Linna Knowledge Cosmos system.
 
 - **Date of first public disclosure**: May 27, 2026
 - **Author**: Filinna
@@ -116,7 +116,7 @@ This repository, the [OSF Project](https://osf.io/aygk6), and the MetaArXiv prep
 
 - [Design Framework & Vision (English)](docs/design-framework.md)
 - [设计框架与愿景（中文）](docs/design-framework_CN.md)
-- [Academic Paper (Preprint)](paper/linna-knowledge-cosmos.pdf.md)
+- [Academic Paper](paper/linna-knowledge-cosmos.pdf.md)
 - [Full Research References](docs/research-references.md)
 
 ---
@@ -125,7 +125,8 @@ This repository, the [OSF Project](https://osf.io/aygk6), and the MetaArXiv prep
 
 - **Creator**: Filinna
 - **Domain**: [filinna.top](https://filinna.top)
-- **OSF Registration**: [osf.io/aygk6](https://osf.io/aygk6) — May 27, 2026 (DOI pending)
+- **OSF Registration**: [osf.io/aygk6](https://osf.io/aygk6) — May 27, 2026
+- **Registration DOI**: [10.17605/OSF.IO/KF5AV](https://doi.org/10.17605/OSF.IO/KF5AV)
 
 ---
 
@@ -142,7 +143,7 @@ Phase 1 delivered with 14 functional modules. Core modules:
 
 ## Current Status
 
-**June 2026**: Phase 1 delivered — complete desktop application. All 14 functional modules operational including character-driven AI companion, hybrid knowledge retrieval, 3D cosmos visualization, identity-driven onboarding, dual-theme design system, and dual-layer animation framework. v2 academic paper submitted to MetaArXiv (DOI pending).
+**June 2026**: Phase 1 delivered — complete desktop application. All 14 functional modules operational including character-driven AI companion, hybrid knowledge retrieval, 3D cosmos visualization, identity-driven onboarding, dual-theme design system, and dual-layer animation framework. Academic paper in revision.
 
 ---
 
